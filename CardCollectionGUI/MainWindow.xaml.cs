@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using System.Windows.Resources;
 using System.Windows.Shapes;
 
 namespace CardCollectionGUI
@@ -50,9 +51,17 @@ namespace CardCollectionGUI
 
         private void binderbutton_Click(object sender, RoutedEventArgs e)
         {
+            //Uri resourceUri = new Uri("Images/Disneybog.jpg", UriKind.Relative);
+            //StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
+
+            //BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
             //var brush = new ImageBrush();
-            //brush.ImageSource = new BitmapImage(new Uri("Images/Disneybog.jpg",UriKind.Relative));
+            //brush.ImageSource = temp;
+
             //binderbutton.Background = brush;
+            BinderWindow binder = new BinderWindow();
+            binder.Show();
+            this.Close();
         }
     }
 }
