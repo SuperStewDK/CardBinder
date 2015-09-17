@@ -23,7 +23,36 @@ namespace CardCollectionGUI
         public MainWindow()
         {
             InitializeComponent();
+            CenterWindowOnScreen();
             
+        }
+
+        // Centers the main window
+        private void CenterWindowOnScreen()
+        {
+            double screenWidth = System.Windows.SystemParameters.PrimaryScreenWidth;
+            double screenHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
+            double windowWidth = this.Width;
+            double windowHeight = this.Height;
+            this.Left = (screenWidth / 2) - (windowWidth / 2);
+            this.Top = (screenHeight / 2) - (windowHeight / 2);
+        }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("User Created");
+        }
+
+        private void binderbutton_Click(object sender, RoutedEventArgs e)
+        {
+            var brush = new ImageBrush();
+            brush.ImageSource = new BitmapImage(new Uri("Assets/Disneybog.jpg"));
+            binderbutton.Background = brush;
         }
     }
 }
