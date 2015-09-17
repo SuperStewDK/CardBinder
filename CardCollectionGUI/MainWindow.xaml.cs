@@ -50,9 +50,9 @@ namespace CardCollectionGUI
 
         private void binderbutton_Click(object sender, RoutedEventArgs e)
         {
-            var brush = new ImageBrush();
-            brush.ImageSource = new BitmapImage(new Uri("Assets/Disneybog.jpg"));
-            binderbutton.Background = brush;
+            //var brush = new ImageBrush();
+            //brush.ImageSource = new BitmapImage(new Uri("Images/Disneybog.jpg",UriKind.Relative));
+            //binderbutton.Background = brush;
         }
     }
 }
