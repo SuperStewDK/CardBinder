@@ -49,6 +49,7 @@ namespace CardCollectionGUI
             MessageBox.Show("User Created");
         }
 
+        //opens a new window with the binder in it
         private void binderbutton_Click(object sender, RoutedEventArgs e)
         {
             //Uri resourceUri = new Uri("Images/Disneybog.jpg", UriKind.Relative);
