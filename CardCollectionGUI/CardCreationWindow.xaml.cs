@@ -12,6 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+/*
+Author: Steffen Rasmussen
+Purpose: Is used to visualize the creation of cards.
+*/
+
 namespace CardCollectionGUI
 {
 

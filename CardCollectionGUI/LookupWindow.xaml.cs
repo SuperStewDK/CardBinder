@@ -12,11 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+/*
+Author: Steffen Rasmussen
+Purpose: Looks up the specific user, and provides the information
+*/
+
 namespace CardCollectionGUI
 {
-    /// <summary>
-    /// Interaction logic for Window1.xaml
-    /// </summary>
+    
     public partial class LookupWindow : Window
     {
         private static LookupWindow instance;

@@ -12,11 +12,13 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+/*
+Author: Steffen Rasmussen
+Purpose: Provides an overall overview of the created cards with their respective information
+*/
+
 namespace CardCollectionGUI
 {
-    /// <summary>
-    /// Interaction logic for BinderWindow.xaml
-    /// </summary>
     public partial class CardsWindow : Window
     {
         private static CardsWindow instance;
@@ -36,8 +38,9 @@ namespace CardCollectionGUI
             InitializeComponent();
             CenterWindowOnScreen();
             // The objects that is suppossed to be listed in the card window is generated here
-
-            this.listView.Items.Add(new object {});
+            /*
+            this.listView.Items.Add(new Domain.CollectableCard {Name = "Anders And", Friendship = 55, Bravery = 87, Humor = 77, StarFactor = 93});
+            */
             
         }
 

@@ -26,7 +26,7 @@ namespace CardCollectionGUI
     
     public partial class MainWindow : Window
     {
-
+        IController control = DomainController.getInstance();
         public MainWindow()
         {
             InitializeComponent();
@@ -62,6 +62,7 @@ namespace CardCollectionGUI
 
         private void button_Click_Create(object sender, RoutedEventArgs e)
         {
+            control.createUser(usertextBox.Text, passwordBox.Password);
             MessageBox.Show("User Created");
             debug();
         }
@@ -69,7 +70,9 @@ namespace CardCollectionGUI
         private void button_Click_Lookup(object sender, RoutedEventArgs e)
         {
             LookupWindow lookup = LookupWindow.getInstance();
+            control.findUser(textboxlookup.Text);
             lookup.Show();
+
         }
 
         private void createcardbut_Click(object sender, RoutedEventArgs e)
@@ -97,19 +100,6 @@ namespace CardCollectionGUI
             tb.GotFocus -= nameboxleft_GotFocus;
         }
 
-        private void passwordtextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        // Removes text from the text box when clicked
-        private void passbox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            tb.Text = string.Empty;
-            tb.GotFocus -= passbox_GotFocus;
-        }
-
         private void textboxlookup_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -122,5 +112,6 @@ namespace CardCollectionGUI
             tb.Text = string.Empty;
             tb.GotFocus -= nameboxright_GotFocus;
         }
+        
     }
 }

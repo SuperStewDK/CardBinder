@@ -11,8 +11,6 @@
         <Label x:Name="label" Content="User Name:" HorizontalAlignment="Left" Margin="36,88,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="usertextBox" HorizontalAlignment="Left" Height="23" Margin="107,88,0,0" TextWrapping="Wrap" Text="Write User ID" VerticalAlignment="Top" Width="120" GotFocus="nameboxleft_GotFocus" TextChanged="usertextBox_TextChanged"/>
         <Button x:Name="createuserbut" Content="Create User" Margin="90,183,352,0" VerticalAlignment="Top" Click="button_Click_Create"/>
-
-        <TextBox x:Name="passwordtextBox" HorizontalAlignment="Left" Height="23" Margin="107,133,0,0" TextWrapping="Wrap" Text="Write Password" VerticalAlignment="Top" Width="120" GotFocus="passbox_GotFocus" TextChanged="passwordtextBox_TextChanged"/>
         <Label x:Name="label_Copy" Content="Password:" HorizontalAlignment="Left" Margin="36,130,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy1" Content="User Name:" HorizontalAlignment="Left" Margin="290,88,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textboxlookup" HorizontalAlignment="Left" Height="23" Margin="361,88,0,0" TextWrapping="Wrap" Text="Write User ID" VerticalAlignment="Top" Width="120" GotFocus="nameboxright_GotFocus" TextChanged="textboxlookup_TextChanged"/>
@@ -36,5 +34,6 @@
         </Separator>
         <Label x:Name="headlinelabel1" Content="Create User" HorizontalAlignment="Left" Height="39" Margin="52,44,0,0" VerticalAlignment="Top" Width="159" HorizontalContentAlignment="Center" FontSize="18"/>
         <Label x:Name="headlinelabel2" Content="Lookup User" HorizontalAlignment="Left" Height="39" Margin="322,44,0,0" VerticalAlignment="Top" Width="159" HorizontalContentAlignment="Center" FontSize="18"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="107,130,0,0" VerticalAlignment="Top" Width="120" Height="26" />
     </Grid>
 </Window>
