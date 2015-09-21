@@ -8,7 +8,17 @@
         Title="Cards" Height="600" Width="400" Background="Azure" ResizeMode="NoResize">
     <Grid>
         <Label x:Name="label" Content="Cards Created" HorizontalAlignment="Left" Height="46" Margin="-8,10,0,0" VerticalAlignment="Top" Width="400" HorizontalContentAlignment="Center" FontSize="20"/>
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="499" Margin="0,61,0,0" VerticalAlignment="Top" Width="392"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="501" Margin="0,61,0,0" VerticalAlignment="Top" Width="394">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="110"/>
+                    <GridViewColumn Header="Friendship" DisplayMemberBinding="{Binding Friendship}" Width="70"/>
+                    <GridViewColumn Header="Bravery" DisplayMemberBinding="{Binding Bravery}" Width="70"/>
+                    <GridViewColumn Header="Humor" DisplayMemberBinding="{Binding Humor}" Width="70"/>
+                    <GridViewColumn Header="StarFactor" DisplayMemberBinding="{Binding StarFactor}" Width="70"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>
