@@ -19,6 +19,7 @@ namespace Domain
     {
 
         ArrayList UserList = new ArrayList();
+        ArrayList CardList = new ArrayList();
 
 
         public RewardCard LatestRewardCard { get; set; }
@@ -42,7 +43,8 @@ namespace Domain
 
         public string createCard(string cardName, string imagePath, int friendship, int bravery, int humor, int starfactor)
         {
-            return "";
+            CardList.Add(new CollectableCard(cardName, imagePath, friendship, bravery, humor, starfactor));
+            return "New Card has been added";
         }
 
         public string createRewardCard()
@@ -64,9 +66,9 @@ namespace Domain
             throw new NotImplementedException();
         }
 
-        public Card[] displayCards()
+        public ArrayList getCards()
         {
-            throw new NotImplementedException();
+            return CardList;
         }
 
         public User findUser(string userName)
