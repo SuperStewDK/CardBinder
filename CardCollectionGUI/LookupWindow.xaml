@@ -9,21 +9,8 @@
     <Grid>
         <Label x:Name="namelabel" Content="User ID:" HorizontalAlignment="Left" Margin="30,45,0,0" VerticalAlignment="Top"/>
         <Label x:Name="displayuserlabel" Content="" HorizontalAlignment="Left" Margin="160,45,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="cardlabel" Content="Amount of Cards:" HorizontalAlignment="Left" Margin="30,90,0,0" VerticalAlignment="Top"/>
         <Label x:Name="amountlabel" Content="" HorizontalAlignment="Left" Margin="160,90,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="listlabel" Content="List of Cards:" HorizontalAlignment="Left" Margin="30,135,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label" Content="User Lookup" HorizontalAlignment="Left" VerticalAlignment="Top" Width="392" Height="45" HorizontalContentAlignment="Center" FontSize="20"/>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="394" Margin="0,166,0,0" VerticalAlignment="Top" Width="392" >
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="100"/>
-                    <GridViewColumn Header="Friendship" DisplayMemberBinding="{Binding Friendship}" Width="70"/>
-                    <GridViewColumn Header="Bravery" DisplayMemberBinding="{Binding Bravery}" Width="70"/>
-                    <GridViewColumn Header="Humor" DisplayMemberBinding="{Binding Humor}" Width="70"/>
-                    <GridViewColumn Header="StarFactor" DisplayMemberBinding="{Binding StarFactor}" Width="70"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
 
     </Grid>
 </Window>

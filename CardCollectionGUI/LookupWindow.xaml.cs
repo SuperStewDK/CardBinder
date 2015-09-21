@@ -23,26 +23,24 @@ namespace CardCollectionGUI
     
     public partial class LookupWindow : Window
     {
-        MainWindow window = MainWindow.getInstance();
+        IController control;
 
-        private static LookupWindow instance;
-        IController control = DomainController.getInstance();
-
-        // A singleton that ensures only one window of this instance is open
-        public static LookupWindow getInstance()
-        {
-            if (instance == null)
-            {
-                instance = new LookupWindow();
-            }
-            return instance;
-        }
-
-        public LookupWindow()
+        public LookupWindow(String username)
         {
             InitializeComponent();
             CenterWindowOnScreen();
-            displayuserlabel.Content = window.user;
+            control = DomainController.getInstance();
+            this.Show();
+            findUser(username);
+        }
+
+        private void findUser(string username)
+        {
+            User u = control.findUser(username);
+            if (u == null)
+                displayuserlabel.Content = "No user found";
+            else
+                displayuserlabel.Content = u.Username;
         }
 
         // Centers the main window
@@ -55,6 +53,7 @@ namespace CardCollectionGUI
             this.Left = (screenWidth / 2) - (windowWidth / 2);
             this.Top = (screenHeight / 2) - (windowHeight / 2);
         }
+
 
     }
 }

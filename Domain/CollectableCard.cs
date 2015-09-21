@@ -35,7 +35,6 @@ namespace Domain
         */
         public CollectableCard(String name, String imagePath, int friendship, int bravery, int humor, int starFactor)
         {
-            SerialNumber = getAndIncrementSerial();
             Name = name;
             ImagePath = imagePath;
             Friendship = friendship;

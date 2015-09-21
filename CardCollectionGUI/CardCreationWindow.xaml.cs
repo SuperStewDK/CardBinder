@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using Domain;
 
 /*
-Author: Steffen Rasmussen
+Author: Steffen Rasmussen, Mikkel B. Christensen.
 Purpose: Is used to visualize the creation of cards.
 */
 
@@ -23,28 +23,28 @@ namespace CardCollectionGUI
 
     public partial class CardCreationWindow : Window
     {
-        private static CardCreationWindow instance;
-        IController control = DomainController.getInstance();
-        // A singleton that ensures only one window of this instance is open
-        public static CardCreationWindow getInstance()
-        {
-            if (instance == null)
-            {
-                instance = new CardCreationWindow();
-            }
-            return instance;
-        }
+       
+        IController control;
+
 
         public CardCreationWindow()
         {
             InitializeComponent();
             CenterWindowOnScreen();
+            control = DomainController.getInstance();
+            this.Show();
         }
 
         //opens a new window with the card information
         private void binderbutton_Click(object sender, RoutedEventArgs e)
         {
-            
+            control.createCard(namebox.Text, imagepathbox.Text, Int32.Parse(friendbox.Text), Int32.Parse(bravebox.Text), Int32.Parse(humorbox.Text), Int32.Parse(starbox.Text));
+            namebox.Text = "";
+            imagepathbox.Text = "";
+            friendbox.Text = "";
+            bravebox.Text = "";
+            humorbox.Text = "";
+            starbox.Text = "";
         }
 
         // Centers the window
@@ -58,82 +58,14 @@ namespace CardCollectionGUI
             this.Top = (screenHeight / 2) - (windowHeight / 2);
         }
 
-        private void namebox_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
-        }
-
-        // Removes text from the text box when clicked
-        private void namebox_GotFocus(object sender, RoutedEventArgs e)
+        //Focus Event to remove text currently in the window.
+        private void gotFocus_Event(object sender, RoutedEventArgs e)
         {
             TextBox tb = (TextBox)sender;
             tb.Text = string.Empty;
-            tb.GotFocus -= namebox_GotFocus;   
+            tb.GotFocus -= gotFocus_Event;
         }
 
-        private void imagepathbox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        // Removes text from the text box when clicked
-        private void imagebox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            tb.Text = string.Empty;
-            tb.GotFocus -= imagebox_GotFocus;
-        }
-
-        private void friendbox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        // Removes text from the text box when clicked
-        private void friendbox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            tb.Text = string.Empty;
-            tb.GotFocus -= friendbox_GotFocus;
-        }
-
-        private void bravebox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        // Removes text from the text box when clicked
-        private void bravebox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            tb.Text = string.Empty;
-            tb.GotFocus -= bravebox_GotFocus;
-        }
-
-        private void humorbox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        // Removes text from the text box when clicked
-        private void humorbox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            tb.Text = string.Empty;
-            tb.GotFocus -= humorbox_GotFocus;
-        }
-
-        private void starbox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        // Removes text from the text box when clicked
-        private void starbox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            TextBox tb = (TextBox)sender;
-            tb.Text = string.Empty;
-            tb.GotFocus -= starbox_GotFocus;
-        }
     }
 }
