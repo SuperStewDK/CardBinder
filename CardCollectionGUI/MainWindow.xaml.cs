@@ -36,7 +36,6 @@ namespace CardCollectionGUI
 
         private void debug()
         {
-            
             DomainController.getInstance().createRewardCard();
             RewardCard rc = DomainController.getInstance().LatestRewardCard;
             Console.WriteLine("Card Code: " + rc.RewardCode + "\t Card ID: " + rc.SerialNumber);

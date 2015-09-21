@@ -41,6 +41,8 @@ namespace Domain
         }
 
 
+
+        //Used for creating a new card
         public string createCard(string cardName, string imagePath, int friendship, int bravery, int humor, int starfactor)
         {
             CardList.Add(new CollectableCard(cardName, imagePath, friendship, bravery, humor, starfactor));
@@ -63,7 +65,8 @@ namespace Domain
 
         public string createUser(string userName, string password)
         {
-            throw new NotImplementedException();
+            UserList.Add(new User(userName, password));
+            return "User created successfully";
         }
 
         public ArrayList getCards()
@@ -71,9 +74,16 @@ namespace Domain
             return CardList;
         }
 
+        //Used to lookup a user by their exact username. 
         public User findUser(string userName)
         {
-            throw new NotImplementedException();
+            foreach(User u in UserList)
+            {
+                if (u.Username == userName)
+                    return u;
+            }
+            return null;
+
         }
     }
 }
