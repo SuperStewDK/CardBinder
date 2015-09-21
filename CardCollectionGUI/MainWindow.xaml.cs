@@ -83,5 +83,44 @@ namespace CardCollectionGUI
             CardsWindow cardsWindow = CardsWindow.getInstance();
             cardsWindow.Show();
         }
+
+        private void usertextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        // Removes text from the text box when clicked
+        private void nameboxleft_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= nameboxleft_GotFocus;
+        }
+
+        private void passwordtextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        // Removes text from the text box when clicked
+        private void passbox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= passbox_GotFocus;
+        }
+
+        private void textboxlookup_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        // Removes text from the text box when clicked
+        private void nameboxright_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            tb.Text = string.Empty;
+            tb.GotFocus -= nameboxright_GotFocus;
+        }
     }
 }

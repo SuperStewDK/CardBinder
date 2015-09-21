@@ -5,22 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CardCollectionGUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="525" Background="Azure">
+        Title="Administration Access" Height="400" Width="525" Background="Azure" ResizeMode="NoResize">
     <Grid>
 
-        <Label x:Name="label" Content="User ID:" HorizontalAlignment="Left" Margin="36,88,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="usertextBox" HorizontalAlignment="Left" Height="23" Margin="101,88,0,0" TextWrapping="Wrap" Text="Write User ID" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="createuserbut" Content="Create User" HorizontalAlignment="Left" Margin="66,183,0,0" VerticalAlignment="Top" Width="75" Click="button_Click_Create"/>
+        <Label x:Name="label" Content="User Name:" HorizontalAlignment="Left" Margin="36,88,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="usertextBox" HorizontalAlignment="Left" Height="23" Margin="107,88,0,0" TextWrapping="Wrap" Text="Write User ID" VerticalAlignment="Top" Width="120" GotFocus="nameboxleft_GotFocus" TextChanged="usertextBox_TextChanged"/>
+        <Button x:Name="createuserbut" Content="Create User" Margin="90,183,352,0" VerticalAlignment="Top" Click="button_Click_Create"/>
 
-        <TextBox x:Name="passwordtextBox" HorizontalAlignment="Left" Height="23" Margin="101,133,0,0" TextWrapping="Wrap" Text="Write Password" VerticalAlignment="Top" Width="120" />
+        <TextBox x:Name="passwordtextBox" HorizontalAlignment="Left" Height="23" Margin="107,133,0,0" TextWrapping="Wrap" Text="Write Password" VerticalAlignment="Top" Width="120" GotFocus="passbox_GotFocus" TextChanged="passwordtextBox_TextChanged"/>
         <Label x:Name="label_Copy" Content="Password:" HorizontalAlignment="Left" Margin="36,130,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label_Copy1" Content="User ID:" HorizontalAlignment="Left" Margin="290,88,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textboxlookup" HorizontalAlignment="Left" Height="23" Margin="356,88,0,0" TextWrapping="Wrap" Text="Write User ID" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="lookupbut" Content="Lookup User" HorizontalAlignment="Left" Margin="321,183,0,0" VerticalAlignment="Top" Width="82" Click="button_Click_Lookup"/>
+        <Label x:Name="label_Copy1" Content="User Name:" HorizontalAlignment="Left" Margin="290,88,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textboxlookup" HorizontalAlignment="Left" Height="23" Margin="361,88,0,0" TextWrapping="Wrap" Text="Write User ID" VerticalAlignment="Top" Width="120" GotFocus="nameboxright_GotFocus" TextChanged="textboxlookup_TextChanged"/>
+        <Button x:Name="lookupbut" Content="Lookup User" Margin="345,183,90,0" VerticalAlignment="Top" Click="button_Click_Lookup"/>
         <Label x:Name="adminLabel" Content="Administrator UI" HorizontalAlignment="Left" Height="45" Margin="180,10,0,0" VerticalAlignment="Top" Width="165" FontSize="20"/>
         <Label x:Name="cardLabel" Content="Card Handling" HorizontalAlignment="Left" Height="44" Margin="190,250,0,0" VerticalAlignment="Top" Width="145" FontSize="20"/>
-        <Button x:Name="createcardbut" Content="Create New Card" HorizontalAlignment="Left" Margin="101,305,0,0" VerticalAlignment="Top" Width="110" Click="createcardbut_Click"/>
-        <Button x:Name="displaycardsbut" Content="Display Cards" HorizontalAlignment="Left" Margin="300,305,0,0" VerticalAlignment="Top" Width="110" Click="displaycardsbut_Click"/>
+        <Button x:Name="createcardbut" Content="Create New Card" HorizontalAlignment="Left" Margin="90,305,0,0" VerticalAlignment="Top" Width="110" Click="createcardbut_Click"/>
+        <Button x:Name="displaycardsbut" Content="Display Cards" HorizontalAlignment="Left" Margin="317,305,0,0" VerticalAlignment="Top" Width="110" Click="displaycardsbut_Click"/>
         <Separator HorizontalAlignment="Left" Height="29" Margin="0,231,0,0" VerticalAlignment="Top" Width="517"/>
+        <Separator HorizontalAlignment="Left" Height="29" Margin="0,26,0,0" VerticalAlignment="Top" Width="517"/>
+        <Separator HorizontalAlignment="Left" Height="29" Margin="0,230,0,0" VerticalAlignment="Top" Width="517"/>
+        <Separator Height="131" Margin="156,78,157,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90.187"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+        <Label x:Name="headlinelabel1" Content="Create User" HorizontalAlignment="Left" Height="39" Margin="52,44,0,0" VerticalAlignment="Top" Width="159" HorizontalContentAlignment="Center" FontSize="18"/>
+        <Label x:Name="headlinelabel2" Content="Lookup User" HorizontalAlignment="Left" Height="39" Margin="322,44,0,0" VerticalAlignment="Top" Width="159" HorizontalContentAlignment="Center" FontSize="18"/>
     </Grid>
 </Window>

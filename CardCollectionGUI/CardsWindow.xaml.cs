@@ -35,6 +35,10 @@ namespace CardCollectionGUI
         {
             InitializeComponent();
             CenterWindowOnScreen();
+            // The objects that is suppossed to be listed in the card window is generated here
+
+            this.listView.Items.Add(new object {});
+            
         }
 
         // Centers the main window
