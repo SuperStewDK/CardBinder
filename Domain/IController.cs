@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 
 /**
- * Author: Mikkel B. Christensen
+ * Author: Mikkel B. Christensen, Steffen Rasmussen.
  * Purpose: This interface is to allow a uniform manner of access to the domain layer from other layers.
  */
 
@@ -23,6 +23,8 @@ namespace Domain
         Card[] displayCards(); //Retrieves an array of one of each card-type on the system.
 
 
+        //Currently unused functionality. Meant to be used in conjunction with promotional offers.
+        String createRewardCard();
 
     }
 }
