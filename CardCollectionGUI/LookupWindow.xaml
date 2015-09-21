@@ -1,0 +1,18 @@
+﻿<Window x:Class="CardCollectionGUI.LookupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CardCollectionGUI"
+        mc:Ignorable="d"
+        Title="User Lookup" Height="300" Width="300" Background="Azure">
+    <Grid>
+        <Label x:Name="namelabel" Content="User ID:" HorizontalAlignment="Left" Margin="30,45,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="displayuserlabel" Content="" HorizontalAlignment="Left" Margin="160,45,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="cardlabel" Content="Amount of Cards:" HorizontalAlignment="Left" Margin="30,90,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="amountlabel" Content="" HorizontalAlignment="Left" Margin="160,90,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="listlabel" Content="List of Cards:" HorizontalAlignment="Left" Margin="30,135,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="94" Margin="30,165,0,0" VerticalAlignment="Top" Width="230" SelectionChanged="listBox_SelectionChanged"/>
+
+    </Grid>
+</Window>

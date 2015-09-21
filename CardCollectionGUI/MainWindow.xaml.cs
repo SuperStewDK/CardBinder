@@ -14,13 +14,18 @@ using System.Windows.Navigation;
 using System.Windows.Resources;
 using System.Windows.Shapes;
 
+/*
+Author: Steffen Rasmussen
+Purpose: The main window is used by the administrator to handle users and access card features
+in the application
+*/
+
 namespace CardCollectionGUI
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+    
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -39,30 +44,28 @@ namespace CardCollectionGUI
             this.Top = (screenHeight / 2) - (windowHeight / 2);
         }
 
-        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
 
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void button_Click_Create(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("User Created");
         }
 
-        //opens a new window with the binder in it
-        private void binderbutton_Click(object sender, RoutedEventArgs e)
+        private void button_Click_Lookup(object sender, RoutedEventArgs e)
         {
-            //Uri resourceUri = new Uri("Images/Disneybog.jpg", UriKind.Relative);
-            //StreamResourceInfo streamInfo = Application.GetResourceStream(resourceUri);
+            LookupWindow lookup = LookupWindow.getInstance();
+            lookup.Show();
+        }
 
-            //BitmapFrame temp = BitmapFrame.Create(streamInfo.Stream);
-            //var brush = new ImageBrush();
-            //brush.ImageSource = temp;
+        private void createcardbut_Click(object sender, RoutedEventArgs e)
+        {
+            CardCreationWindow createCardWindow = CardCreationWindow.getInstance();
+            createCardWindow.Show();
+        }
 
-            //binderbutton.Background = brush;
-            BinderWindow binder = new BinderWindow();
-            binder.Show();
-            this.Close();
+        private void displaycardsbut_Click(object sender, RoutedEventArgs e)
+        {
+            CardsWindow cardsWindow = CardsWindow.getInstance();
+            cardsWindow.Show();
         }
     }
 }

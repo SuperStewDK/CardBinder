@@ -5,15 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CardCollectionGUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="400" Width="525" Background="Azure">
     <Grid>
-        <Label x:Name="label" Content="User ID:" HorizontalAlignment="Left" Margin="35,35,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="101,38,0,0" TextWrapping="Wrap" Text="Write User ID" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
-        <Button x:Name="button" Content="Create User" HorizontalAlignment="Left" Margin="60,90,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <Button x:Name="binderbutton" Content="See Binder" Width="Auto" Height="Auto" Margin="324,130,20,20" Click="binderbutton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="Images/Disneybog.jpg"></ImageBrush>
-            </Button.Background>
-        </Button>
+
+        <Label x:Name="label" Content="User ID:" HorizontalAlignment="Left" Margin="36,88,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="usertextBox" HorizontalAlignment="Left" Height="23" Margin="101,88,0,0" TextWrapping="Wrap" Text="Write User ID" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="createuserbut" Content="Create User" HorizontalAlignment="Left" Margin="66,183,0,0" VerticalAlignment="Top" Width="75" Click="button_Click_Create"/>
+
+        <TextBox x:Name="passwordtextBox" HorizontalAlignment="Left" Height="23" Margin="101,133,0,0" TextWrapping="Wrap" Text="Write Password" VerticalAlignment="Top" Width="120" />
+        <Label x:Name="label_Copy" Content="Password:" HorizontalAlignment="Left" Margin="36,130,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="User ID:" HorizontalAlignment="Left" Margin="290,88,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textboxlookup" HorizontalAlignment="Left" Height="23" Margin="356,88,0,0" TextWrapping="Wrap" Text="Write User ID" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="lookupbut" Content="Lookup User" HorizontalAlignment="Left" Margin="321,183,0,0" VerticalAlignment="Top" Width="82" Click="button_Click_Lookup"/>
+        <Label x:Name="adminLabel" Content="Administrator UI" HorizontalAlignment="Left" Height="45" Margin="180,10,0,0" VerticalAlignment="Top" Width="165" FontSize="20"/>
+        <Label x:Name="cardLabel" Content="Card Handling" HorizontalAlignment="Left" Height="44" Margin="190,250,0,0" VerticalAlignment="Top" Width="145" FontSize="20"/>
+        <Button x:Name="createcardbut" Content="Create New Card" HorizontalAlignment="Left" Margin="101,305,0,0" VerticalAlignment="Top" Width="110" Click="createcardbut_Click"/>
+        <Button x:Name="displaycardsbut" Content="Display Cards" HorizontalAlignment="Left" Margin="300,305,0,0" VerticalAlignment="Top" Width="110" Click="displaycardsbut_Click"/>
+        <Separator HorizontalAlignment="Left" Height="29" Margin="0,231,0,0" VerticalAlignment="Top" Width="517"/>
     </Grid>
 </Window>
