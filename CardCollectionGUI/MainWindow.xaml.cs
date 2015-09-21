@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Resources;
 using System.Windows.Shapes;
+using Domain;
 
 /*
 Author: Steffen Rasmussen
@@ -33,6 +34,20 @@ namespace CardCollectionGUI
             
         }
 
+        private void debug()
+        {
+            
+            DomainController.getInstance().createRewardCard();
+            RewardCard rc = DomainController.getInstance().LatestRewardCard;
+            Console.WriteLine("Card Code: " + rc.RewardCode + "\t Card ID: " + rc.SerialNumber);
+
+            DomainController.getInstance().cardTest("MyName", "MyPath");
+            CollectableCard cc = DomainController.getInstance().LatestCollectableCard;
+            Console.WriteLine("card name: " + cc.Name + "\tcard path: " + cc.ImagePath + "\t  bravery: " + cc.Bravery);
+
+           
+        }
+
         // Centers the main window
         private void CenterWindowOnScreen()
         {
@@ -48,6 +63,7 @@ namespace CardCollectionGUI
         private void button_Click_Create(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("User Created");
+            debug();
         }
 
         private void button_Click_Lookup(object sender, RoutedEventArgs e)
