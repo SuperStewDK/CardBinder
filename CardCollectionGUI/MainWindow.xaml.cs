@@ -36,15 +36,23 @@ namespace CardCollectionGUI
 
         private void debug()
         {
-            DomainController.getInstance().createRewardCard();
-            RewardCard rc = DomainController.getInstance().LatestRewardCard;
-            Console.WriteLine("Card Code: " + rc.RewardCode + "\t Card ID: " + rc.SerialNumber);
+            Console.WriteLine("\n\n\n\n");
+            foreach (CollectableCard c in control.getCards())
+            {
+                Console.WriteLine
+                    (
 
-            DomainController.getInstance().cardTest("MyName", "MyPath");
-            CollectableCard cc = DomainController.getInstance().LatestCollectableCard;
-            Console.WriteLine("card name: " + cc.Name + "\tcard path: " + cc.ImagePath + "\t  bravery: " + cc.Bravery);
+                      "Card Name: " + c.Name
+                    + "\t Card Path: " + c.ImagePath
+                    + "\t Friendship: " + c.Friendship
+                    + "\t Bravery: " + c.Friendship
+                    + "\t StarFactor: " + c.StarFactor
+                    + "\t Humor: " + c.Humor
+                    + "\t Card ID: " + c.SerialNumber
+                    );
+            }
+            Console.WriteLine("\n\n\n\n");
 
-           
         }
 
         // Centers the main window
@@ -68,22 +76,21 @@ namespace CardCollectionGUI
 
         private void button_Click_Lookup(object sender, RoutedEventArgs e)
         {
-            LookupWindow lookup = LookupWindow.getInstance();
-            control.findUser(textboxlookup.Text);
-            lookup.Show();
+            LookupWindow lookup = new LookupWindow(textboxlookup.Text);
+
 
         }
 
         private void createcardbut_Click(object sender, RoutedEventArgs e)
         {
-            CardCreationWindow createCardWindow = CardCreationWindow.getInstance();
-            createCardWindow.Show();
+            CardCreationWindow createCardWindow = new CardCreationWindow();
+            
         }
 
         private void displaycardsbut_Click(object sender, RoutedEventArgs e)
         {
-            CardsWindow cardsWindow = CardsWindow.getInstance();
-            cardsWindow.Show();
+            CardsWindow cardsWindow = new CardsWindow();
+
         }
 
         private void usertextBox_TextChanged(object sender, TextChangedEventArgs e)

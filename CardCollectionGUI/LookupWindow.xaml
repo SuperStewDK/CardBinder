@@ -9,10 +9,7 @@
     <Grid>
         <Label x:Name="namelabel" Content="User ID:" HorizontalAlignment="Left" Margin="30,45,0,0" VerticalAlignment="Top"/>
         <Label x:Name="displayuserlabel" Content="" HorizontalAlignment="Left" Margin="160,45,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="cardlabel" Content="Amount of Cards:" HorizontalAlignment="Left" Margin="30,90,0,0" VerticalAlignment="Top"/>
         <Label x:Name="amountlabel" Content="" HorizontalAlignment="Left" Margin="160,90,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="listlabel" Content="List of Cards:" HorizontalAlignment="Left" Margin="30,135,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="listBox" Height="395" Margin="30,165,30,0" VerticalAlignment="Top" SelectionChanged="listBox_SelectionChanged"/>
         <Label x:Name="label" Content="User Lookup" HorizontalAlignment="Left" VerticalAlignment="Top" Width="392" Height="45" HorizontalContentAlignment="Center" FontSize="20"/>
 
     </Grid>

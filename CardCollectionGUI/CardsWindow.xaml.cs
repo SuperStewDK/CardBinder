@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using Domain;
 /*
 Author: Steffen Rasmussen
 Purpose: Provides an overall overview of the created cards with their respective information
@@ -22,26 +22,26 @@ namespace CardCollectionGUI
     public partial class CardsWindow : Window
     {
         private static CardsWindow instance;
-
-        // A singleton that ensures only one window of this instance is open
-        public static CardsWindow getInstance()
-        {
-            if (instance == null)
-            {
-                instance = new CardsWindow();
-            }
-            return instance;
-        }
+        IController control;
 
         public CardsWindow()
         {
+            control = DomainController.getInstance();
             InitializeComponent();
             CenterWindowOnScreen();
-            // The objects that is suppossed to be listed in the card window is generated here
-            /*
-            this.listView.Items.Add(new Domain.CollectableCard {Name = "Anders And", Friendship = 55, Bravery = 87, Humor = 77, StarFactor = 93});
-            */
+            addCardsToList();
+            this.Show();
             
+        }
+
+        public void addCardsToList()
+        {
+         
+
+            foreach(CollectableCard c in control.getCards())
+            {
+                this.listView.Items.Add(new CollectableCard {Name = c.Name, Friendship = c.Friendship, Bravery = c.Bravery, Humor = c.Humor, StarFactor = c.StarFactor });
+            }
         }
 
         // Centers the main window

@@ -21,16 +21,16 @@
         <Label x:Name="label6" Content="StarFactor lvl:" HorizontalAlignment="Left" Margin="10,212,0,0" VerticalAlignment="Top"/>
         <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Left" Height="0" Margin="-5,52,0,0" VerticalAlignment="Top" Width="152"/>
         <TextBox x:Name="namebox" HorizontalAlignment="Left" Height="23" Margin="101,60,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="120"
-                 GotFocus="imagebox_GotFocus" TextChanged="namebox_TextChanged"/>
+                 GotFocus="gotFocus_Event" />
         <TextBox x:Name="imagepathbox" HorizontalAlignment="Left" Height="23" Margin="101,91,0,0" TextWrapping="Wrap" Text="Image-Path" VerticalAlignment="Top" Width="120" 
-                 TextChanged="imagepathbox_TextChanged" GotFocus="imagebox_GotFocus"/>
+                  GotFocus="gotFocus_Event"/>
         <TextBox x:Name="friendbox" HorizontalAlignment="Left" Height="23" Margin="101,122,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="40" 
-                 GotFocus="friendbox_GotFocus" TextChanged="friendbox_TextChanged"/>
+                 GotFocus="gotFocus_Event" />
         <TextBox x:Name="bravebox" HorizontalAlignment="Left" Height="23" Margin="101,152,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="40" 
-                 GotFocus="bravebox_GotFocus" TextChanged="bravebox_TextChanged"/>
+                 GotFocus="gotFocus_Event" />
         <TextBox x:Name="humorbox" HorizontalAlignment="Left" Height="23" Margin="101,183,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="40" 
-                 GotFocus="humorbox_GotFocus" TextChanged="humorbox_TextChanged"/>
+                 GotFocus="gotFocus_Event" />
         <TextBox x:Name="starbox" HorizontalAlignment="Left" Height="23" Margin="101,215,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="40" 
-                 GotFocus="starbox_GotFocus" TextChanged="starbox_TextChanged"/>
+                 GotFocus="gotFocus_Event" />
     </Grid>
 </Window>

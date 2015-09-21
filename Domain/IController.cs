@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    interface IController
+    public interface IController
     {
         String createUser(string userName, string password);
         User findUser(string userName);
