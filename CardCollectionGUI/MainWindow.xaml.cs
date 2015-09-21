@@ -27,6 +27,20 @@ namespace CardCollectionGUI
     public partial class MainWindow : Window
     {
         IController control = DomainController.getInstance();
+        public String user { get; set; }
+
+        private static MainWindow instance;
+
+        // A singleton that ensures only one window of this instance is open
+        public static MainWindow getInstance()
+        {
+            if (instance == null)
+            {
+                instance = new MainWindow();
+            }
+            return instance;
+        }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -70,7 +84,7 @@ namespace CardCollectionGUI
         private void button_Click_Lookup(object sender, RoutedEventArgs e)
         {
             LookupWindow lookup = LookupWindow.getInstance();
-            control.findUser(textboxlookup.Text);
+            user = control.findUser(textboxlookup.Text).Username;
             lookup.Show();
 
         }

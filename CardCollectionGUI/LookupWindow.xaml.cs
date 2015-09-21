@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Domain;
 
 /*
 Author: Steffen Rasmussen
@@ -22,7 +23,10 @@ namespace CardCollectionGUI
     
     public partial class LookupWindow : Window
     {
+        MainWindow window = MainWindow.getInstance();
+
         private static LookupWindow instance;
+        IController control = DomainController.getInstance();
 
         // A singleton that ensures only one window of this instance is open
         public static LookupWindow getInstance()
@@ -38,6 +42,7 @@ namespace CardCollectionGUI
         {
             InitializeComponent();
             CenterWindowOnScreen();
+            displayuserlabel.Content = window.user;
         }
 
         // Centers the main window
@@ -51,10 +56,5 @@ namespace CardCollectionGUI
             this.Top = (screenHeight / 2) - (windowHeight / 2);
         }
 
-        // List all of the cards the user is currently in possession of
-        private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }
