@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Domain;
 
 /*
 Author: Steffen Rasmussen
@@ -22,6 +23,7 @@ namespace CardCollectionGUI
     public partial class CardsWindow : Window
     {
         private static CardsWindow instance;
+        IController control = DomainController.getInstance();
 
         // A singleton that ensures only one window of this instance is open
         public static CardsWindow getInstance()
@@ -41,7 +43,11 @@ namespace CardCollectionGUI
             /*
             this.listView.Items.Add(new Domain.CollectableCard {Name = "Anders And", Friendship = 55, Bravery = 87, Humor = 77, StarFactor = 93});
             */
-            
+        }
+
+        private void Window_loaded(object sender, RoutedEventArgs e)
+        {
+            listView.ItemsSource = control.getCards();
         }
 
         // Centers the main window

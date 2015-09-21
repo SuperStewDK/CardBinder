@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Domain;
 
 /*
 Author: Steffen Rasmussen
@@ -23,7 +24,7 @@ namespace CardCollectionGUI
     public partial class CardCreationWindow : Window
     {
         private static CardCreationWindow instance;
-
+        IController control = DomainController.getInstance();
         // A singleton that ensures only one window of this instance is open
         public static CardCreationWindow getInstance()
         {
