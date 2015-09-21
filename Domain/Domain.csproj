@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CardFactory.cs" />
+    <Compile Include="IController.cs" />
     <Compile Include="Trade.cs" />
     <Compile Include="CardExchange.cs" />
     <Compile Include="Binder.cs" />
