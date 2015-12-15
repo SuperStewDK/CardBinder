@@ -12,7 +12,9 @@ namespace Persistens
     {
         static void Main(string[] args)
         {
-            String connectionString = "Server=tcp:adventuretest.database.windows.net,1433;Database=Cardbinder; User ID = AdventureAdmin@adventuretest; Password = Rasmussen1; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;";
+            Console.WriteLine("Enter password for database acces");
+            String word = Console.ReadLine();
+            String connectionString = "Data Source = DESKTOP - 65Q4BFL/SQLEXPRESS; Initial Catalog = CardBinder; Integrated Security = True";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand cmd = new SqlCommand("INSERT INTO Card (Name, SerialNumber, Image) Values(@Name, @SerialNumber, @Image)");
