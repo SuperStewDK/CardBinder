@@ -27,6 +27,7 @@ namespace CardCollectionGUI
     public partial class MainWindow : Window
     {
         IController control = DomainController.getInstance();
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -77,8 +78,8 @@ namespace CardCollectionGUI
         private void button_Click_Lookup(object sender, RoutedEventArgs e)
         {
             LookupWindow lookup = new LookupWindow(textboxlookup.Text);
-
-
+            DBconn conn = new DBconn();
+            conn.viewUser();
         }
 
         private void createcardbut_Click(object sender, RoutedEventArgs e)

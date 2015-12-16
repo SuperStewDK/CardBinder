@@ -41,8 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CardFactory.cs" />
-    <Compile Include="DBRead.cs" />
-    <Compile Include="DBWrite.cs" />
+    <Compile Include="DBconn.cs" />
     <Compile Include="DomainController.cs" />
     <Compile Include="IController.cs" />
     <Compile Include="Trade.cs" />
