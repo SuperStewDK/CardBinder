@@ -25,6 +25,15 @@ namespace Domain
             return count;
         }
 
+        private int getLast()
+        {
+            db = new LinqToSQLDatacontext(connectionString);
+
+            cardbinder lastEntry = db.cardbinders.Last();
+
+            return lastEntry.id;
+        }
+
         public void cardToDB(string name, string imagepath, int friendship, int bravery, int humor, int starfactor)
         {
             db = new LinqToSQLDatacontext(connectionString);
@@ -64,7 +73,7 @@ namespace Domain
 
             // Create new card in cardbinder
             cardbinder newcard = new cardbinder();
-            newcard.id = userName + "Binder";
+            newcard.id = getLast();
             newcard.userid = userName;
             newcard.cardid = cardID;
 
@@ -90,8 +99,9 @@ namespace Domain
             db = new LinqToSQLDatacontext(connectionString);
 
             // Get cardbinder to delete
-            db.cardbinders.Where(e => e.userid.Equals(userName + "Binder")).ToList();
-            obj.tblA.Where(x => x.fid == i).ToList().ForEach(obj.tblA.DeleteObject);
+            db.cardbinders.DeleteAllOnSubmit(db.cardbinders.Where(e => e.userid == userName));
+
+            db.SubmitChanges();
 
             // Get user to delete
             user removeUser = db.users.FirstOrDefault(e => e.name.Equals(userName));

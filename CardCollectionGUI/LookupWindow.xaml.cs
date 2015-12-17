@@ -25,7 +25,7 @@ namespace CardCollectionGUI
     {
         IController control;
         string name;
-        public LookupWindow(String username)
+        public LookupWindow(string username)
         {
             InitializeComponent();
             CenterWindowOnScreen();

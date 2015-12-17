@@ -201,7 +201,7 @@ SELECT name, password FROM [user] WHERE (name = @name)</CommandText>
   <xs:element name="CardBinderDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="CardBinderDataSet1" msprop:Generator_UserDSName="CardBinderDataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="card" msprop:Generator_TableClassName="cardDataTable" msprop:Generator_TableVarName="tablecard" msprop:Generator_TablePropName="card" msprop:Generator_RowDeletingName="cardRowDeleting" msprop:Generator_RowChangingName="cardRowChanging" msprop:Generator_RowEvHandlerName="cardRowChangeEventHandler" msprop:Generator_RowDeletedName="cardRowDeleted" msprop:Generator_UserTableName="card" msprop:Generator_RowChangedName="cardRowChanged" msprop:Generator_RowEvArgName="cardRowChangeEvent" msprop:Generator_RowClassName="cardRow">
+        <xs:element name="card" msprop:Generator_TableClassName="cardDataTable" msprop:Generator_TableVarName="tablecard" msprop:Generator_RowChangedName="cardRowChanged" msprop:Generator_TablePropName="card" msprop:Generator_RowDeletingName="cardRowDeleting" msprop:Generator_RowChangingName="cardRowChanging" msprop:Generator_RowEvHandlerName="cardRowChangeEventHandler" msprop:Generator_RowDeletedName="cardRowDeleted" msprop:Generator_RowClassName="cardRow" msprop:Generator_UserTableName="card" msprop:Generator_RowEvArgName="cardRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name">
@@ -226,16 +226,10 @@ SELECT name, password FROM [user] WHERE (name = @name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="cardbinder" msprop:Generator_TableClassName="cardbinderDataTable" msprop:Generator_TableVarName="tablecardbinder" msprop:Generator_TablePropName="cardbinder" msprop:Generator_RowDeletingName="cardbinderRowDeleting" msprop:Generator_RowChangingName="cardbinderRowChanging" msprop:Generator_RowEvHandlerName="cardbinderRowChangeEventHandler" msprop:Generator_RowDeletedName="cardbinderRowDeleted" msprop:Generator_UserTableName="cardbinder" msprop:Generator_RowChangedName="cardbinderRowChanged" msprop:Generator_RowEvArgName="cardbinderRowChangeEvent" msprop:Generator_RowClassName="cardbinderRow">
+        <xs:element name="cardbinder" msprop:Generator_TableClassName="cardbinderDataTable" msprop:Generator_TableVarName="tablecardbinder" msprop:Generator_RowChangedName="cardbinderRowChanged" msprop:Generator_TablePropName="cardbinder" msprop:Generator_RowDeletingName="cardbinderRowDeleting" msprop:Generator_RowChangingName="cardbinderRowChanging" msprop:Generator_RowEvHandlerName="cardbinderRowChangeEventHandler" msprop:Generator_RowDeletedName="cardbinderRowDeleted" msprop:Generator_RowClassName="cardbinderRow" msprop:Generator_UserTableName="cardbinder" msprop:Generator_RowEvArgName="cardbinderRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="40" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
               <xs:element name="userid" msprop:Generator_ColumnVarNameInTable="columnuserid" msprop:Generator_ColumnPropNameInRow="userid" msprop:Generator_ColumnPropNameInTable="useridColumn" msprop:Generator_UserColumnName="userid">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -247,7 +241,7 @@ SELECT name, password FROM [user] WHERE (name = @name)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="user" msprop:Generator_TableClassName="userDataTable" msprop:Generator_TableVarName="tableuser" msprop:Generator_TablePropName="user" msprop:Generator_RowDeletingName="userRowDeleting" msprop:Generator_RowChangingName="userRowChanging" msprop:Generator_RowEvHandlerName="userRowChangeEventHandler" msprop:Generator_RowDeletedName="userRowDeleted" msprop:Generator_UserTableName="user" msprop:Generator_RowChangedName="userRowChanged" msprop:Generator_RowEvArgName="userRowChangeEvent" msprop:Generator_RowClassName="userRow">
+        <xs:element name="user" msprop:Generator_TableClassName="userDataTable" msprop:Generator_TableVarName="tableuser" msprop:Generator_RowChangedName="userRowChanged" msprop:Generator_TablePropName="user" msprop:Generator_RowDeletingName="userRowDeleting" msprop:Generator_RowChangingName="userRowChanging" msprop:Generator_RowEvHandlerName="userRowChangeEventHandler" msprop:Generator_RowDeletedName="userRowDeleted" msprop:Generator_RowClassName="userRow" msprop:Generator_UserTableName="user" msprop:Generator_RowEvArgName="userRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name">
@@ -284,8 +278,8 @@ SELECT name, password FROM [user] WHERE (name = @name)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_cardbinder_card" msdata:parent="card" msdata:child="cardbinder" msdata:parentkey="serialnumber" msdata:childkey="cardid" msprop:Generator_UserChildTable="cardbinder" msprop:Generator_ChildPropName="GetcardbinderRows" msprop:Generator_UserRelationName="FK_cardbinder_card" msprop:Generator_ParentPropName="cardRow" msprop:Generator_RelationVarName="relationFK_cardbinder_card" msprop:Generator_UserParentTable="card" />
-      <msdata:Relationship name="FK_cardbinder_user" msdata:parent="user" msdata:child="cardbinder" msdata:parentkey="name" msdata:childkey="userid" msprop:Generator_UserChildTable="cardbinder" msprop:Generator_ChildPropName="GetcardbinderRows" msprop:Generator_UserRelationName="FK_cardbinder_user" msprop:Generator_RelationVarName="relationFK_cardbinder_user" msprop:Generator_UserParentTable="user" msprop:Generator_ParentPropName="userRow" />
+      <msdata:Relationship name="FK_cardbinder_card" msdata:parent="card" msdata:child="cardbinder" msdata:parentkey="serialnumber" msdata:childkey="cardid" msprop:Generator_UserChildTable="cardbinder" msprop:Generator_ChildPropName="GetcardbinderRows" msprop:Generator_UserRelationName="FK_cardbinder_card" msprop:Generator_RelationVarName="relationFK_cardbinder_card" msprop:Generator_UserParentTable="card" msprop:Generator_ParentPropName="cardRow" />
+      <msdata:Relationship name="FK_cardbinder_user" msdata:parent="user" msdata:child="cardbinder" msdata:parentkey="name" msdata:childkey="userid" msprop:Generator_UserChildTable="cardbinder" msprop:Generator_ChildPropName="GetcardbinderRows" msprop:Generator_UserRelationName="FK_cardbinder_user" msprop:Generator_ParentPropName="userRow" msprop:Generator_RelationVarName="relationFK_cardbinder_user" msprop:Generator_UserParentTable="user" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

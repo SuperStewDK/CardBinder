@@ -295,7 +295,7 @@ namespace Domain
 	public partial class cardbinder
 	{
 		
-		private string _id;
+		private int _id;
 		
 		private string _userid;
 		
@@ -305,8 +305,8 @@ namespace Domain
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="NChar(40) NOT NULL", CanBeNull=false)]
-		public string id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType = "Int NOT NULL", IsPrimaryKey = true, CanBeNull = false)]
+		public int id
 		{
 			get
 			{

@@ -22,7 +22,7 @@ namespace Domain {
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
     [global::System.Xml.Serialization.XmlRootAttribute("CardBinderDataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class CardBinderDataSet : global::System.Data.DataSet {
+    public partial class CardBinderDataSet1 : global::System.Data.DataSet {
         
         private cardDataTable tablecard;
         
@@ -38,7 +38,7 @@ namespace Domain {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public CardBinderDataSet() {
+        public CardBinderDataSet1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -49,7 +49,7 @@ namespace Domain {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected CardBinderDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected CardBinderDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -161,7 +161,7 @@ namespace Domain {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            CardBinderDataSet cln = ((CardBinderDataSet)(base.Clone()));
+            CardBinderDataSet1 cln = ((CardBinderDataSet1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -303,7 +303,7 @@ namespace Domain {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            CardBinderDataSet ds = new CardBinderDataSet();
+            CardBinderDataSet1 ds = new CardBinderDataSet1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -642,7 +642,7 @@ namespace Domain {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CardBinderDataSet ds = new CardBinderDataSet();
+                CardBinderDataSet1 ds = new CardBinderDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -808,7 +808,7 @@ namespace Domain {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cardbinderRow AddcardbinderRow(string id, userRow parentuserRowByFK_cardbinder_user, cardRow parentcardRowByFK_cardbinder_card) {
+            public cardbinderRow AddcardbinderRow(int id, userRow parentuserRowByFK_cardbinder_user, cardRow parentcardRowByFK_cardbinder_card) {
                 cardbinderRow rowcardbinderRow = ((cardbinderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
@@ -827,7 +827,7 @@ namespace Domain {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cardbinderRow FindByid(string id) {
+            public cardbinderRow FindByid(int id) {
                 return ((cardbinderRow)(this.Rows.Find(new object[] {
                             id})));
             }
@@ -857,7 +857,7 @@ namespace Domain {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
                 this.columnuserid = new global::System.Data.DataColumn("userid", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnuserid);
@@ -867,7 +867,6 @@ namespace Domain {
                                 this.columnid}, true));
                 this.columnid.AllowDBNull = false;
                 this.columnid.Unique = true;
-                this.columnid.MaxLength = 40;
                 this.columnuserid.AllowDBNull = false;
                 this.columnuserid.MaxLength = 30;
                 this.columncardid.AllowDBNull = false;
@@ -938,7 +937,7 @@ namespace Domain {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CardBinderDataSet ds = new CardBinderDataSet();
+                CardBinderDataSet1 ds = new CardBinderDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1212,7 +1211,7 @@ namespace Domain {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                CardBinderDataSet ds = new CardBinderDataSet();
+                CardBinderDataSet1 ds = new CardBinderDataSet1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1475,9 +1474,9 @@ namespace Domain {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string id {
+            public int id {
                 get {
-                    return ((string)(this[this.tablecardbinder.idColumn]));
+                    return ((int)(this[this.tablecardbinder.idColumn]));
                 }
                 set {
                     this[this.tablecardbinder.idColumn] = value;
@@ -1906,7 +1905,7 @@ SELECT name, serialnumber, imagepath, friendship, bravery, humor, starfactor FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CardBinderDataSet.cardDataTable dataTable) {
+        public virtual int Fill(CardBinderDataSet1.cardDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1919,9 +1918,9 @@ SELECT name, serialnumber, imagepath, friendship, bravery, humor, starfactor FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CardBinderDataSet.cardDataTable GetData() {
+        public virtual CardBinderDataSet1.cardDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CardBinderDataSet.cardDataTable dataTable = new CardBinderDataSet.cardDataTable();
+            CardBinderDataSet1.cardDataTable dataTable = new CardBinderDataSet1.cardDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1929,14 +1928,14 @@ SELECT name, serialnumber, imagepath, friendship, bravery, humor, starfactor FRO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CardBinderDataSet.cardDataTable dataTable) {
+        public virtual int Update(CardBinderDataSet1.cardDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CardBinderDataSet dataSet) {
+        public virtual int Update(CardBinderDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "card");
         }
         
@@ -2372,7 +2371,7 @@ SELECT name, serialnumber, imagepath, friendship, bravery, humor, starfactor FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CardBinderDataSet.cardbinderDataTable dataTable) {
+        public virtual int Fill(CardBinderDataSet1.cardbinderDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2385,9 +2384,9 @@ SELECT name, serialnumber, imagepath, friendship, bravery, humor, starfactor FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CardBinderDataSet.cardbinderDataTable GetData() {
+        public virtual CardBinderDataSet1.cardbinderDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CardBinderDataSet.cardbinderDataTable dataTable = new CardBinderDataSet.cardbinderDataTable();
+            CardBinderDataSet1.cardbinderDataTable dataTable = new CardBinderDataSet1.cardbinderDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2395,14 +2394,14 @@ SELECT name, serialnumber, imagepath, friendship, bravery, humor, starfactor FRO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CardBinderDataSet.cardbinderDataTable dataTable) {
+        public virtual int Update(CardBinderDataSet1.cardbinderDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CardBinderDataSet dataSet) {
+        public virtual int Update(CardBinderDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "cardbinder");
         }
         
@@ -2720,7 +2719,7 @@ SELECT name, serialnumber, imagepath, friendship, bravery, humor, starfactor FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(CardBinderDataSet.userDataTable dataTable) {
+        public virtual int Fill(CardBinderDataSet1.userDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2733,9 +2732,9 @@ SELECT name, serialnumber, imagepath, friendship, bravery, humor, starfactor FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual CardBinderDataSet.userDataTable GetData() {
+        public virtual CardBinderDataSet1.userDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            CardBinderDataSet.userDataTable dataTable = new CardBinderDataSet.userDataTable();
+            CardBinderDataSet1.userDataTable dataTable = new CardBinderDataSet1.userDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2743,14 +2742,14 @@ SELECT name, serialnumber, imagepath, friendship, bravery, humor, starfactor FRO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CardBinderDataSet.userDataTable dataTable) {
+        public virtual int Update(CardBinderDataSet1.userDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(CardBinderDataSet dataSet) {
+        public virtual int Update(CardBinderDataSet1 dataSet) {
             return this.Adapter.Update(dataSet, "user");
         }
         
@@ -3030,7 +3029,7 @@ SELECT name, serialnumber, imagepath, friendship, bravery, humor, starfactor FRO
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(CardBinderDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(CardBinderDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._cardTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.card.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -3067,7 +3066,7 @@ SELECT name, serialnumber, imagepath, friendship, bravery, humor, starfactor FRO
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(CardBinderDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(CardBinderDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._cardTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.card.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -3101,7 +3100,7 @@ SELECT name, serialnumber, imagepath, friendship, bravery, humor, starfactor FRO
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(CardBinderDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(CardBinderDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._cardbinderTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.cardbinder.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -3159,7 +3158,7 @@ SELECT name, serialnumber, imagepath, friendship, bravery, humor, starfactor FRO
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(CardBinderDataSet dataSet) {
+        public virtual int UpdateAll(CardBinderDataSet1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
