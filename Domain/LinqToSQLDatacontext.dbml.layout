@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses1">
+  <DataContextMoniker Name="/DataClasses1DataContext" />
+  <nestedChildShapes>
+    <classShape Id="44c0c869-117d-44c9-ab07-dadaab4f4a47" absoluteBounds="0.75, 3.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/DataClasses1DataContext/card" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cbe0c1c8-a478-4525-bd1f-a9742f3abdeb" absoluteBounds="0.765, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="31340b6e-56fa-40bc-be70-f9e285d1b84c" absoluteBounds="3.5, 0.875, 2, 1.3862939453124998">
+      <DataClassMoniker Name="/DataClasses1DataContext/cardbinder" />
+      <nestedChildShapes>
+        <elementListCompartment Id="78b450dd-f2c5-4ec9-9b44-1387f52fcc33" absoluteBounds="3.515, 1.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4311c63b-35bd-47e3-a23c-b4f8ae3d140c" absoluteBounds="0.75, 1, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/DataClasses1DataContext/user" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3bcb8736-01b0-43cd-a228-96ec84650ef1" absoluteBounds="0.765, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.56814697265625); (4.5 : 4.56814697265625); (4.5 : 2.2612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/card/card_cardbinder" />
+      <nodes>
+        <classShapeMoniker Id="44c0c869-117d-44c9-ab07-dadaab4f4a47" />
+        <classShapeMoniker Id="31340b6e-56fa-40bc-be70-f9e285d1b84c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.59699625651042); (3.5 : 1.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/user/user_cardbinder" />
+      <nodes>
+        <classShapeMoniker Id="4311c63b-35bd-47e3-a23c-b4f8ae3d140c" />
+        <classShapeMoniker Id="31340b6e-56fa-40bc-be70-f9e285d1b84c" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

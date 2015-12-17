@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CardBinder" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=STEFFEN-PC\SQLEXPRESS;Initial Catalog=CardBinder;Integrated Security=True" SettingsObjectName="Domain.Properties.Settings" SettingsPropertyName="CardBinderConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.card" Member="cards">
+    <Type Name="card">
+      <Column Name="name" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="serialnumber" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="imagepath" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Association Name="card_cardbinder" Member="cardbinders" ThisKey="serialnumber" OtherKey="cardid" Type="cardbinder" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cardbinder" Member="cardbinders">
+    <Type Name="cardbinder">
+      <Column Name="id" Type="System.String" DbType="NChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="userid" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="cardid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="card_cardbinder" Member="card" ThisKey="cardid" OtherKey="serialnumber" Type="card" IsForeignKey="true" />
+      <Association Name="user_cardbinder" Member="user" ThisKey="userid" OtherKey="name" Type="user" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[user]" Member="users">
+    <Type Name="user">
+      <Column Name="name" Type="System.String" DbType="NChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Association Name="user_cardbinder" Member="cardbinders" ThisKey="name" OtherKey="userid" Type="cardbinder" />
+    </Type>
+  </Table>
+</Database>

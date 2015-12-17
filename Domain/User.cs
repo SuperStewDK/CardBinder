@@ -24,8 +24,7 @@ namespace Domain
         {
             Username = username;
             Password = password;
-            string binderid = username + "Binder";
-            UserBinder = new Binder(binderid, username);
+            UserBinder = new Binder(username);
         }
 
 

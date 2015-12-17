@@ -79,7 +79,8 @@ namespace CardCollectionGUI
         {
             LookupWindow lookup = new LookupWindow(textboxlookup.Text);
             DBconn conn = new DBconn();
-            conn.viewUser();
+
+            conn.viewUser("john");
         }
 
         private void createcardbut_Click(object sender, RoutedEventArgs e)

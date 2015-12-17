@@ -23,9 +23,9 @@ namespace Domain
         // arraylist containing cards
         public ArrayList cardList { get; set; }
 
-        public Binder(string binderid, string userid)
+        public Binder(string userid)
         {
-            binderId = binderid;
+            binderId = userid + "Binder";
             cardList = new ArrayList();
         }
     }
