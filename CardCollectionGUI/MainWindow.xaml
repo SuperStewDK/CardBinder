@@ -14,7 +14,7 @@
         <Label x:Name="label_Copy" Content="Password:" HorizontalAlignment="Left" Margin="36,130,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy1" Content="User Name:" HorizontalAlignment="Left" Margin="290,88,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textboxlookup" HorizontalAlignment="Left" Height="23" Margin="361,88,0,0" TextWrapping="Wrap" Text="Write User ID" VerticalAlignment="Top" Width="120" GotFocus="nameboxright_GotFocus" />
-        <Button x:Name="lookupbut" Content="Lookup User" Margin="345,183,90,0" VerticalAlignment="Top" Click="button_Click_Lookup"/>
+        <Button x:Name="lookupbut" Content="Lookup User" Margin="350,120,0,0" VerticalAlignment="Top" Click="button_Click_Lookup" HorizontalAlignment="Left" Width="84"/>
         <Label x:Name="adminLabel" Content="Administrator UI" HorizontalAlignment="Left" Height="45" Margin="180,10,0,0" VerticalAlignment="Top" Width="165" FontSize="20"/>
         <Label x:Name="cardLabel" Content="Card Handling" HorizontalAlignment="Left" Height="44" Margin="190,250,0,0" VerticalAlignment="Top" Width="145" FontSize="20"/>
         <Button x:Name="createcardbut" Content="Create New Card" HorizontalAlignment="Left" Margin="90,305,0,0" VerticalAlignment="Top" Width="110" Click="createcardbut_Click"/>
@@ -35,5 +35,11 @@
         <Label x:Name="headlinelabel1" Content="Create User" HorizontalAlignment="Left" Height="39" Margin="52,44,0,0" VerticalAlignment="Top" Width="159" HorizontalContentAlignment="Center" FontSize="18"/>
         <Label x:Name="headlinelabel2" Content="Lookup User" HorizontalAlignment="Left" Height="39" Margin="322,44,0,0" VerticalAlignment="Top" Width="159" HorizontalContentAlignment="Center" FontSize="18"/>
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="107,130,0,0" VerticalAlignment="Top" Width="120" Height="26" />
+        <Button x:Name="button" Content="Remove Card" Margin="198,335,0,0" VerticalAlignment="Top" Click="remove_button" Width="120" HorizontalAlignment="Left"/>
+        <Separator HorizontalAlignment="Left" Height="29" Margin="254,135,0,0" VerticalAlignment="Top" Width="265"/>
+        <Label x:Name="headlinelabel2_Copy" Content="Edit User" HorizontalAlignment="Left" Height="39" Margin="305,145,0,0" VerticalAlignment="Top" Width="159" HorizontalContentAlignment="Center" FontSize="18"/>
+        <Button x:Name="addToUserBtn" Content="Add Card To User" HorizontalAlignment="Left" Margin="330,175,0,0" VerticalAlignment="Top" Width="105" Click="addToUserBtn_Click"/>
+        <Button x:Name="button1" Content="Remove card, User" HorizontalAlignment="Left" Margin="330,198,0,0" VerticalAlignment="Top" Width="105" Click="button1_Click"/>
+        <Button x:Name="button2" Content="Edit Username" HorizontalAlignment="Left" Margin="330,221,0,0" VerticalAlignment="Top" Width="105" Click="button2_Click"/>
     </Grid>
 </Window>

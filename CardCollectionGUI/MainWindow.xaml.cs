@@ -78,9 +78,7 @@ namespace CardCollectionGUI
         private void button_Click_Lookup(object sender, RoutedEventArgs e)
         {
             LookupWindow lookup = new LookupWindow(textboxlookup.Text);
-            DBconn conn = new DBconn();
 
-            conn.viewUser("john");
         }
 
         private void createcardbut_Click(object sender, RoutedEventArgs e)
@@ -95,22 +93,12 @@ namespace CardCollectionGUI
 
         }
 
-        private void usertextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         // Removes text from the text box when clicked
         private void nameboxleft_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox tb = (TextBox)sender;
             tb.Text = string.Empty;
             tb.GotFocus -= nameboxleft_GotFocus;
-        }
-
-        private void textboxlookup_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
 
         // Removes text from the text box when clicked
@@ -120,6 +108,27 @@ namespace CardCollectionGUI
             tb.Text = string.Empty;
             tb.GotFocus -= nameboxright_GotFocus;
         }
-        
+
+        private void remove_button(object sender, RoutedEventArgs e)
+        {
+            RemoveCardWindow removeWindow = new RemoveCardWindow();
+        }
+
+        private void addToUserBtn_Click(object sender, RoutedEventArgs e)
+        {
+            addToUserWindow addWindow = new addToUserWindow();
+        }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            RemoveFromUserWinder removeWindow = new RemoveFromUserWinder();
+
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            EditUsernameWindow editWindow = new EditUsernameWindow();
+
+        }
     }
 }

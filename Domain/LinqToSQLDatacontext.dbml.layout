@@ -20,14 +20,14 @@
         <elementListCompartment Id="3bcb8736-01b0-43cd-a228-96ec84650ef1" absoluteBounds="0.765, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 4.56814697265625); (4.5 : 4.56814697265625); (4.5 : 2.2612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.56814697265625); (4.5 : 4.56814697265625); (4.5 : 2.2612939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/card/card_cardbinder" />
       <nodes>
         <classShapeMoniker Id="44c0c869-117d-44c9-ab07-dadaab4f4a47" />
         <classShapeMoniker Id="31340b6e-56fa-40bc-be70-f9e285d1b84c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 1.59699625651042); (3.5 : 1.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 1.59699625651042); (3.5 : 1.59699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataClasses1DataContext/user/user_cardbinder" />
       <nodes>
         <classShapeMoniker Id="4311c63b-35bd-47e3-a23c-b4f8ae3d140c" />

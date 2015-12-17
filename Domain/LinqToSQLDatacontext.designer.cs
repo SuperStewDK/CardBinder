@@ -104,6 +104,14 @@ namespace Domain
 		private int _serialnumber;
 		
 		private string _imagepath;
+
+        private int _friendship;
+
+        private int _bravery;
+
+        private int _humor;
+
+        private int _starfactor;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -181,8 +189,88 @@ namespace Domain
 				}
 			}
 		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_friendship", DbType = "Int NOT NULL")]
+        public int friendship
+        {
+            get
+            {
+                return this._friendship;
+            }
+            set
+            {
+                if ((this._friendship != value))
+                {
+                    this.OnserialnumberChanging(value);
+                    this.SendPropertyChanging();
+                    this._friendship = value;
+                    this.SendPropertyChanged("friendship");
+                    this.OnserialnumberChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_bravery", DbType = "Int NOT NULL")]
+        public int bravery
+        {
+            get
+            {
+                return this._bravery;
+            }
+            set
+            {
+                if ((this._bravery != value))
+                {
+                    this.OnserialnumberChanging(value);
+                    this.SendPropertyChanging();
+                    this._bravery = value;
+                    this.SendPropertyChanged("bravery");
+                    this.OnserialnumberChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_humor", DbType = "Int NOT NULL")]
+        public int humor
+        {
+            get
+            {
+                return this._humor;
+            }
+            set
+            {
+                if ((this._humor != value))
+                {
+                    this.OnserialnumberChanging(value);
+                    this.SendPropertyChanging();
+                    this._humor = value;
+                    this.SendPropertyChanged("humor");
+                    this.OnserialnumberChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_starfactor", DbType = "Int NOT NULL")]
+        public int starfactor
+        {
+            get
+            {
+                return this._starfactor;
+            }
+            set
+            {
+                if ((this._starfactor != value))
+                {
+                    this.OnserialnumberChanging(value);
+                    this.SendPropertyChanging();
+                    this._starfactor = value;
+                    this.SendPropertyChanged("starfactor");
+                    this.OnserialnumberChanged();
+                }
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
 		

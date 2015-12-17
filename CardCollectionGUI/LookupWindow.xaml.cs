@@ -24,13 +24,14 @@ namespace CardCollectionGUI
     public partial class LookupWindow : Window
     {
         IController control;
-
+        string name;
         public LookupWindow(String username)
         {
             InitializeComponent();
             CenterWindowOnScreen();
             control = DomainController.getInstance();
             this.Show();
+            name = username;
             findUser(username);
         }
 
@@ -54,6 +55,13 @@ namespace CardCollectionGUI
             this.Top = (screenHeight / 2) - (windowHeight / 2);
         }
 
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            DBconn conn = new DBconn();
 
+            conn.deleteUser(name);
+
+            this.Close();
+        }
     }
 }

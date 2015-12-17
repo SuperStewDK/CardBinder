@@ -11,6 +11,15 @@
         <Label x:Name="displayuserlabel" Content="" HorizontalAlignment="Left" Margin="160,45,0,0" VerticalAlignment="Top"/>
         <Label x:Name="amountlabel" Content="" HorizontalAlignment="Left" Margin="160,90,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label" Content="User Lookup" HorizontalAlignment="Left" VerticalAlignment="Top" Width="392" Height="45" HorizontalContentAlignment="Center" FontSize="20"/>
+        <Button x:Name="button" Content="Delete User" HorizontalAlignment="Left" Margin="290,539,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="431" Margin="0,103,0,0" VerticalAlignment="Top" Width="392">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label x:Name="label1" Content="Binder ID: " Margin="116,77,116,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

@@ -39,12 +39,18 @@ namespace CardCollectionGUI
         private void binderbutton_Click(object sender, RoutedEventArgs e)
         {
             control.createCard(namebox.Text, imagepathbox.Text, Int32.Parse(friendbox.Text), Int32.Parse(bravebox.Text), Int32.Parse(humorbox.Text), Int32.Parse(starbox.Text));
-            namebox.Text = "";
-            imagepathbox.Text = "";
-            friendbox.Text = "";
-            bravebox.Text = "";
-            humorbox.Text = "";
-            starbox.Text = "";
+            string name, imagepath;
+            int f, b, h, s;
+            name = namebox.Text;
+            imagepath = imagepathbox.Text;
+            f = Int32.Parse(friendbox.Text);
+            b = Int32.Parse(bravebox.Text);
+            h = Int32.Parse(humorbox.Text);
+            s = Int32.Parse(starbox.Text);
+
+            DBconn conn = new DBconn();
+
+            conn.cardToDB(name, imagepath, f, b, h, s);
         }
 
         // Centers the window

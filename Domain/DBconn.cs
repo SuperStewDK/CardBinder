@@ -16,15 +16,28 @@ namespace Domain
 
         LinqToSQLDatacontext db;
 
-        public void cardToDB(string name, int serialNumber, string imagepath)
+        private int getCount()
+        {
+            db = new LinqToSQLDatacontext(connectionString);
+
+            var count = db.cards.Count();
+
+            return count;
+        }
+
+        public void cardToDB(string name, string imagepath, int friendship, int bravery, int humor, int starfactor)
         {
             db = new LinqToSQLDatacontext(connectionString);
 
             // Create new Card
             card newcard = new card();
             newcard.name = name;
-            newcard.serialnumber = serialNumber;
+            newcard.serialnumber = getCount()+1;
             newcard.imagepath = imagepath;
+            newcard.friendship = friendship;
+            newcard.bravery = bravery;
+            newcard.humor = humor;
+            newcard.starfactor = starfactor;
 
             // adds new card to  database
             db.cards.InsertOnSubmit(newcard);
@@ -45,13 +58,13 @@ namespace Domain
             db.SubmitChanges();
         }
 
-        public void addCardToUser(string binderID, string userName, int cardID)
+        public void addCardToUser(string userName, int cardID)
         {
             db = new LinqToSQLDatacontext(connectionString);
 
             // Create new card in cardbinder
             cardbinder newcard = new cardbinder();
-            newcard.id = binderID;
+            newcard.id = userName + "Binder";
             newcard.userid = userName;
             newcard.cardid = cardID;
 
@@ -76,8 +89,12 @@ namespace Domain
         {
             db = new LinqToSQLDatacontext(connectionString);
 
+            // Get cardbinder to delete
+            db.cardbinders.Where(e => e.userid.Equals(userName + "Binder")).ToList();
+            obj.tblA.Where(x => x.fid == i).ToList().ForEach(obj.tblA.DeleteObject);
+
             // Get user to delete
-            user removeUser = db.users.FirstOrDefault(e => e.Equals(userName));
+            user removeUser = db.users.FirstOrDefault(e => e.name.Equals(userName));
 
             // Delete User
             db.users.DeleteOnSubmit(removeUser);
@@ -105,9 +122,9 @@ namespace Domain
 
             // users information consists of his cardbinder
             // Linq statement
-            var query = (from t in db.cardbinders where t.userid == userName select t.cardid);
-
-            var result = query.ToArray();
+            var query = (from t in db.cardbinders
+                         where t.userid == userName
+                         select t.cardid);
 
             // Adds all cardIDs to the cardlist
             foreach (var obj in query)
@@ -118,11 +135,6 @@ namespace Domain
 
             // returns a binder with username and cardIDs
             return userBinder;
-        }
-
-        public void resetPassword()
-        {
-            db = new LinqToSQLDatacontext(connectionString);
         }
 
 

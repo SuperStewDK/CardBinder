@@ -59,14 +59,34 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="addToUserWindow.xaml.cs">
+      <DependentUpon>addToUserWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditUsernameWindow.xaml.cs">
+      <DependentUpon>EditUsernameWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LookupWindow.xaml.cs">
       <DependentUpon>LookupWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RemoveCardWindow.xaml.cs">
+      <DependentUpon>RemoveCardWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RemoveFromUserWinder.xaml.cs">
+      <DependentUpon>RemoveFromUserWinder.xaml</DependentUpon>
+    </Compile>
+    <Page Include="addToUserWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CardsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CardCreationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditUsernameWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -89,6 +109,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="LookupWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RemoveCardWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RemoveFromUserWinder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

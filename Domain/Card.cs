@@ -18,31 +18,19 @@ namespace Domain
         public String Name { get; set; }
         public String ImagePath { get; set; }
         public int SerialNumber { get; set; }
- 
-        //used to track how far we are in the series of cards when creating / destroying card types.
-        static int currentInSeries;
 
-
+        public int friendship { get; set; }
+        public int bravery { get; set; }
+        public int humor { get; set; }
+        public int starfactor { get; set; }
 
         /**
         * Should not generally be used unless manually setting the card name and image path manually directly after object instantiation.
         */
         public Card()
         {
-            SerialNumber = getAndIncrementSerial();
             
         }
 
-
-        /**
-        * The serial number tracks across the type how far in the series we are
-        * This method is then used to assing a new serial number to a card when we create a new card.
-        */
-        public int getAndIncrementSerial()
-        {
-            int currentIncrement = currentInSeries;
-            currentInSeries++;
-            return currentIncrement;
-        }
     }
 }

@@ -20,7 +20,7 @@ namespace Domain {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("CardBinderDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("CardBinderDataSet1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class CardBinderDataSet : global::System.Data.DataSet {
         
@@ -253,9 +253,9 @@ namespace Domain {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "CardBinderDataSet";
+            this.DataSetName = "CardBinderDataSet1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/CardBinderDataSet.xsd";
+            this.Namespace = "http://tempuri.org/CardBinderDataSet1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tablecard = new cardDataTable();
@@ -369,6 +369,14 @@ namespace Domain {
             
             private global::System.Data.DataColumn columnimagepath;
             
+            private global::System.Data.DataColumn columnfriendship;
+            
+            private global::System.Data.DataColumn columnbravery;
+            
+            private global::System.Data.DataColumn columnhumor;
+            
+            private global::System.Data.DataColumn columnstarfactor;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public cardDataTable() {
@@ -428,6 +436,38 @@ namespace Domain {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn friendshipColumn {
+                get {
+                    return this.columnfriendship;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn braveryColumn {
+                get {
+                    return this.columnbravery;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn humorColumn {
+                get {
+                    return this.columnhumor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn starfactorColumn {
+                get {
+                    return this.columnstarfactor;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -463,12 +503,16 @@ namespace Domain {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cardRow AddcardRow(string name, int serialnumber, string imagepath) {
+            public cardRow AddcardRow(string name, int serialnumber, string imagepath, int friendship, int bravery, int humor, int starfactor) {
                 cardRow rowcardRow = ((cardRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         name,
                         serialnumber,
-                        imagepath};
+                        imagepath,
+                        friendship,
+                        bravery,
+                        humor,
+                        starfactor};
                 rowcardRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowcardRow);
                 return rowcardRow;
@@ -501,6 +545,10 @@ namespace Domain {
                 this.columnname = base.Columns["name"];
                 this.columnserialnumber = base.Columns["serialnumber"];
                 this.columnimagepath = base.Columns["imagepath"];
+                this.columnfriendship = base.Columns["friendship"];
+                this.columnbravery = base.Columns["bravery"];
+                this.columnhumor = base.Columns["humor"];
+                this.columnstarfactor = base.Columns["starfactor"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -512,6 +560,14 @@ namespace Domain {
                 base.Columns.Add(this.columnserialnumber);
                 this.columnimagepath = new global::System.Data.DataColumn("imagepath", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnimagepath);
+                this.columnfriendship = new global::System.Data.DataColumn("friendship", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfriendship);
+                this.columnbravery = new global::System.Data.DataColumn("bravery", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnbravery);
+                this.columnhumor = new global::System.Data.DataColumn("humor", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhumor);
+                this.columnstarfactor = new global::System.Data.DataColumn("starfactor", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnstarfactor);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnserialnumber}, true));
                 this.columnname.AllowDBNull = false;
@@ -771,6 +827,13 @@ namespace Domain {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cardbinderRow FindByid(string id) {
+                return ((cardbinderRow)(this.Rows.Find(new object[] {
+                            id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 cardbinderDataTable cln = ((cardbinderDataTable)(base.Clone()));
                 cln.InitVars();
@@ -800,7 +863,10 @@ namespace Domain {
                 base.Columns.Add(this.columnuserid);
                 this.columncardid = new global::System.Data.DataColumn("cardid", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncardid);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
                 this.columnid.AllowDBNull = false;
+                this.columnid.Unique = true;
                 this.columnid.MaxLength = 40;
                 this.columnuserid.AllowDBNull = false;
                 this.columnuserid.MaxLength = 30;
@@ -1078,7 +1144,7 @@ namespace Domain {
                 this.columnname.AllowDBNull = false;
                 this.columnname.Unique = true;
                 this.columnname.MaxLength = 30;
-                this.columnpassword.MaxLength = 30;
+                this.columnpassword.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1259,6 +1325,70 @@ namespace Domain {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int friendship {
+                get {
+                    try {
+                        return ((int)(this[this.tablecard.friendshipColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'friendship\' in table \'card\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecard.friendshipColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int bravery {
+                get {
+                    try {
+                        return ((int)(this[this.tablecard.braveryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'bravery\' in table \'card\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecard.braveryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int humor {
+                get {
+                    try {
+                        return ((int)(this[this.tablecard.humorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'humor\' in table \'card\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecard.humorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int starfactor {
+                get {
+                    try {
+                        return ((int)(this[this.tablecard.starfactorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'starfactor\' in table \'card\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecard.starfactorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsimagepathNull() {
                 return this.IsNull(this.tablecard.imagepathColumn);
             }
@@ -1267,6 +1397,54 @@ namespace Domain {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetimagepathNull() {
                 this[this.tablecard.imagepathColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsfriendshipNull() {
+                return this.IsNull(this.tablecard.friendshipColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetfriendshipNull() {
+                this[this.tablecard.friendshipColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsbraveryNull() {
+                return this.IsNull(this.tablecard.braveryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetbraveryNull() {
+                this[this.tablecard.braveryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IshumorNull() {
+                return this.IsNull(this.tablecard.humorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SethumorNull() {
+                this[this.tablecard.humorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsstarfactorNull() {
+                return this.IsNull(this.tablecard.starfactorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetstarfactorNull() {
+                this[this.tablecard.starfactorColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1519,7 +1697,7 @@ namespace Domain {
         }
     }
 }
-namespace Domain.CardBinderDataSetTableAdapters {
+namespace Domain.CardBinderDataSet1TableAdapters {
     
     
     /// <summary>
@@ -1646,45 +1824,71 @@ namespace Domain.CardBinderDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("name", "name");
             tableMapping.ColumnMappings.Add("serialnumber", "serialnumber");
             tableMapping.ColumnMappings.Add("imagepath", "imagepath");
+            tableMapping.ColumnMappings.Add("friendship", "friendship");
+            tableMapping.ColumnMappings.Add("bravery", "bravery");
+            tableMapping.ColumnMappings.Add("humor", "humor");
+            tableMapping.ColumnMappings.Add("starfactor", "starfactor");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[card] WHERE (([name] = @Original_name) AND ([serialnumber] = @" +
-                "Original_serialnumber) AND ((@IsNull_imagepath = 1 AND [imagepath] IS NULL) OR (" +
-                "[imagepath] = @Original_imagepath)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[card] WHERE (([name] = @Original_name) AND ([serialnumber] = @Original_serialnumber) AND ((@IsNull_imagepath = 1 AND [imagepath] IS NULL) OR ([imagepath] = @Original_imagepath)) AND ((@IsNull_friendship = 1 AND [friendship] IS NULL) OR ([friendship] = @Original_friendship)) AND ((@IsNull_bravery = 1 AND [bravery] IS NULL) OR ([bravery] = @Original_bravery)) AND ((@IsNull_humor = 1 AND [humor] IS NULL) OR ([humor] = @Original_humor)) AND ((@IsNull_starfactor = 1 AND [starfactor] IS NULL) OR ([starfactor] = @Original_starfactor)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_serialnumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "serialnumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_imagepath", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imagepath", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_imagepath", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imagepath", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_friendship", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "friendship", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_friendship", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "friendship", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_bravery", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bravery", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bravery", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bravery", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_humor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "humor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_humor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "humor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_starfactor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "starfactor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_starfactor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "starfactor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[card] ([name], [serialnumber], [imagepath]) VALUES (@name, @se" +
-                "rialnumber, @imagepath);\r\nSELECT name, serialnumber, imagepath FROM card WHERE (" +
-                "serialnumber = @serialnumber)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[card] ([name], [serialnumber], [imagepath], [friendship], [bravery], [humor], [starfactor]) VALUES (@name, @serialnumber, @imagepath, @friendship, @bravery, @humor, @starfactor);
+SELECT name, serialnumber, imagepath, friendship, bravery, humor, starfactor FROM card WHERE (serialnumber = @serialnumber)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@serialnumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "serialnumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imagepath", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imagepath", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@friendship", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "friendship", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bravery", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bravery", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@humor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "humor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@starfactor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "starfactor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[card] SET [name] = @name, [serialnumber] = @serialnumber, [imagepath] = @imagepath WHERE (([name] = @Original_name) AND ([serialnumber] = @Original_serialnumber) AND ((@IsNull_imagepath = 1 AND [imagepath] IS NULL) OR ([imagepath] = @Original_imagepath)));
-SELECT name, serialnumber, imagepath FROM card WHERE (serialnumber = @serialnumber)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[card] SET [name] = @name, [serialnumber] = @serialnumber, [imagepath] = @imagepath, [friendship] = @friendship, [bravery] = @bravery, [humor] = @humor, [starfactor] = @starfactor WHERE (([name] = @Original_name) AND ([serialnumber] = @Original_serialnumber) AND ((@IsNull_imagepath = 1 AND [imagepath] IS NULL) OR ([imagepath] = @Original_imagepath)) AND ((@IsNull_friendship = 1 AND [friendship] IS NULL) OR ([friendship] = @Original_friendship)) AND ((@IsNull_bravery = 1 AND [bravery] IS NULL) OR ([bravery] = @Original_bravery)) AND ((@IsNull_humor = 1 AND [humor] IS NULL) OR ([humor] = @Original_humor)) AND ((@IsNull_starfactor = 1 AND [starfactor] IS NULL) OR ([starfactor] = @Original_starfactor)));
+SELECT name, serialnumber, imagepath, friendship, bravery, humor, starfactor FROM card WHERE (serialnumber = @serialnumber)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@serialnumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "serialnumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@imagepath", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imagepath", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@friendship", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "friendship", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bravery", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bravery", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@humor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "humor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@starfactor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "starfactor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_serialnumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "serialnumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_imagepath", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imagepath", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_imagepath", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imagepath", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_friendship", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "friendship", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_friendship", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "friendship", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_bravery", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bravery", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bravery", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bravery", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_humor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "humor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_humor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "humor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_starfactor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "starfactor", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_starfactor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "starfactor", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Domain.Properties.Settings.Default.CardBinderConnectionString;
+            this._connection.ConnectionString = "Data Source=DESKTOP-65Q4BFL\\SQLEXPRESS;Initial Catalog=CardBinder;Integrated Secu" +
+                "rity=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1693,7 +1897,8 @@ SELECT name, serialnumber, imagepath FROM card WHERE (serialnumber = @serialnumb
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT name, serialnumber, imagepath FROM dbo.card";
+            this._commandCollection[0].CommandText = "SELECT name, serialnumber, imagepath, friendship, bravery, humor, starfactor FROM" +
+                " dbo.card";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1754,7 +1959,7 @@ SELECT name, serialnumber, imagepath FROM card WHERE (serialnumber = @serialnumb
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_name, int Original_serialnumber, string Original_imagepath) {
+        public virtual int Delete(string Original_name, int Original_serialnumber, string Original_imagepath, global::System.Nullable<int> Original_friendship, global::System.Nullable<int> Original_bravery, global::System.Nullable<int> Original_humor, global::System.Nullable<int> Original_starfactor) {
             if ((Original_name == null)) {
                 throw new global::System.ArgumentNullException("Original_name");
             }
@@ -1769,6 +1974,38 @@ SELECT name, serialnumber, imagepath FROM card WHERE (serialnumber = @serialnumb
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_imagepath));
+            }
+            if ((Original_friendship.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_friendship.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_bravery.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_bravery.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_humor.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_humor.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_starfactor.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((int)(Original_starfactor.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1790,7 +2027,7 @@ SELECT name, serialnumber, imagepath FROM card WHERE (serialnumber = @serialnumb
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string name, int serialnumber, string imagepath) {
+        public virtual int Insert(string name, int serialnumber, string imagepath, global::System.Nullable<int> friendship, global::System.Nullable<int> bravery, global::System.Nullable<int> humor, global::System.Nullable<int> starfactor) {
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
             }
@@ -1803,6 +2040,30 @@ SELECT name, serialnumber, imagepath FROM card WHERE (serialnumber = @serialnumb
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(imagepath));
+            }
+            if ((friendship.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(friendship.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((bravery.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(bravery.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((humor.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(humor.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((starfactor.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(starfactor.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1824,7 +2085,7 @@ SELECT name, serialnumber, imagepath FROM card WHERE (serialnumber = @serialnumb
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string name, int serialnumber, string imagepath, string Original_name, int Original_serialnumber, string Original_imagepath) {
+        public virtual int Update(string name, int serialnumber, string imagepath, global::System.Nullable<int> friendship, global::System.Nullable<int> bravery, global::System.Nullable<int> humor, global::System.Nullable<int> starfactor, string Original_name, int Original_serialnumber, string Original_imagepath, global::System.Nullable<int> Original_friendship, global::System.Nullable<int> Original_bravery, global::System.Nullable<int> Original_humor, global::System.Nullable<int> Original_starfactor) {
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
             }
@@ -1838,20 +2099,76 @@ SELECT name, serialnumber, imagepath FROM card WHERE (serialnumber = @serialnumb
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(imagepath));
             }
+            if ((friendship.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(friendship.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((bravery.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(bravery.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((humor.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(humor.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((starfactor.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(starfactor.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
             if ((Original_name == null)) {
                 throw new global::System.ArgumentNullException("Original_name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_name));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_name));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_serialnumber));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_serialnumber));
             if ((Original_imagepath == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_imagepath));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_imagepath));
+            }
+            if ((Original_friendship.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_friendship.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_bravery.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_bravery.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((Original_humor.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_humor.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_starfactor.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_starfactor.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1873,8 +2190,8 @@ SELECT name, serialnumber, imagepath FROM card WHERE (serialnumber = @serialnumb
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string name, string imagepath, string Original_name, int Original_serialnumber, string Original_imagepath) {
-            return this.Update(name, Original_serialnumber, imagepath, Original_name, Original_serialnumber, Original_imagepath);
+        public virtual int Update(string name, string imagepath, global::System.Nullable<int> friendship, global::System.Nullable<int> bravery, global::System.Nullable<int> humor, global::System.Nullable<int> starfactor, string Original_name, int Original_serialnumber, string Original_imagepath, global::System.Nullable<int> Original_friendship, global::System.Nullable<int> Original_bravery, global::System.Nullable<int> Original_humor, global::System.Nullable<int> Original_starfactor) {
+            return this.Update(name, Original_serialnumber, imagepath, friendship, bravery, humor, starfactor, Original_name, Original_serialnumber, Original_imagepath, Original_friendship, Original_bravery, Original_humor, Original_starfactor);
         }
     }
     
@@ -2003,21 +2320,42 @@ SELECT name, serialnumber, imagepath FROM card WHERE (serialnumber = @serialnumb
             tableMapping.ColumnMappings.Add("userid", "userid");
             tableMapping.ColumnMappings.Add("cardid", "cardid");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[cardbinder] WHERE (([id] = @Original_id) AND ([userid] = @Orig" +
+                "inal_userid) AND ([cardid] = @Original_cardid))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_userid", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cardid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cardid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[cardbinder] ([id], [userid], [cardid]) VALUES (@id, @userid, @" +
-                "cardid)";
+                "cardid);\r\nSELECT id, userid, cardid FROM cardbinder WHERE (id = @id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userid", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cardid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cardid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[cardbinder] SET [id] = @id, [userid] = @userid, [cardid] = @cardid " +
+                "WHERE (([id] = @Original_id) AND ([userid] = @Original_userid) AND ([cardid] = @" +
+                "Original_cardid));\r\nSELECT id, userid, cardid FROM cardbinder WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userid", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cardid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cardid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_userid", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_cardid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "cardid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Domain.Properties.Settings.Default.CardBinderConnectionString;
+            this._connection.ConnectionString = "Data Source=DESKTOP-65Q4BFL\\SQLEXPRESS;Initial Catalog=CardBinder;Integrated Secu" +
+                "rity=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2086,6 +2424,40 @@ SELECT name, serialnumber, imagepath FROM card WHERE (serialnumber = @serialnumb
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string Original_id, string Original_userid, int Original_cardid) {
+            if ((Original_id == null)) {
+                throw new global::System.ArgumentNullException("Original_id");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((string)(Original_id));
+            }
+            if ((Original_userid == null)) {
+                throw new global::System.ArgumentNullException("Original_userid");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_userid));
+            }
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_cardid));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
         public virtual int Insert(string id, string userid, int cardid) {
             if ((id == null)) {
@@ -2115,6 +2487,61 @@ SELECT name, serialnumber, imagepath FROM card WHERE (serialnumber = @serialnumb
                     this.Adapter.InsertCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string id, string userid, int cardid, string Original_id, string Original_userid, int Original_cardid) {
+            if ((id == null)) {
+                throw new global::System.ArgumentNullException("id");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(id));
+            }
+            if ((userid == null)) {
+                throw new global::System.ArgumentNullException("userid");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(userid));
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(cardid));
+            if ((Original_id == null)) {
+                throw new global::System.ArgumentNullException("Original_id");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_id));
+            }
+            if ((Original_userid == null)) {
+                throw new global::System.ArgumentNullException("Original_userid");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_userid));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_cardid));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string userid, int cardid, string Original_id, string Original_userid, int Original_cardid) {
+            return this.Update(Original_id, userid, cardid, Original_id, Original_userid, Original_cardid);
         }
     }
     
@@ -2275,7 +2702,8 @@ SELECT name, serialnumber, imagepath FROM card WHERE (serialnumber = @serialnumb
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Domain.Properties.Settings.Default.CardBinderConnectionString;
+            this._connection.ConnectionString = "Data Source=DESKTOP-65Q4BFL\\SQLEXPRESS;Initial Catalog=CardBinder;Integrated Secu" +
+                "rity=True";
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
