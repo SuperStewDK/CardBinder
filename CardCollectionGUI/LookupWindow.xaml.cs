@@ -33,14 +33,15 @@ namespace CardCollectionGUI
         {
             InitializeComponent();
             CenterWindowOnScreen();
-            control = DomainController.getInstance();
             this.Show();
             name = username;
             findUser(username);
+            addCardsToList();
         }
 
         private void findUser(string username)
         {
+            conn = new DBconn();
 
             User u = conn.findUser(username);
             if (u == null)
@@ -73,11 +74,16 @@ namespace CardCollectionGUI
         public void addCardsToList()
         {
             conn = new DBconn();
-            conn.viewUser(name);
 
-            foreach (CollectableCard c in control.getCards())
+            Binder binder;
+
+            binder = conn.viewUser(name);
+
+            foreach (card c in binder.cardList)
             {
-                this.listView.Items.Add(new CollectableCard { Name = c.Name, Friendship = c.Friendship, Bravery = c.Bravery, Humor = c.Humor, StarFactor = c.StarFactor });
+
+                //this.listView.Items.Add(new CollectableCard { Name = c.Name, Friendship = c.Friendship, Bravery = c.Bravery, Humor = c.Humor, StarFactor = c.StarFactor });
+                this.listView.Items.Add(c);
             }
         }
     }

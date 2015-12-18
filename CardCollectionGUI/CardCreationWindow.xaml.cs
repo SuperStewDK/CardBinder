@@ -23,22 +23,18 @@ namespace CardCollectionGUI
 
     public partial class CardCreationWindow : Window
     {
-       
-        IController control;
-
-
+     
         public CardCreationWindow()
         {
             InitializeComponent();
             CenterWindowOnScreen();
-            control = DomainController.getInstance();
+           
             this.Show();
         }
 
         //opens a new window with the card information
         private void binderbutton_Click(object sender, RoutedEventArgs e)
         {
-            control.createCard(namebox.Text, imagepathbox.Text, Int32.Parse(friendbox.Text), Int32.Parse(bravebox.Text), Int32.Parse(humorbox.Text), Int32.Parse(starbox.Text));
             string name, imagepath;
             int f, b, h, s;
             name = namebox.Text;
@@ -50,7 +46,7 @@ namespace CardCollectionGUI
 
             DBconn conn = new DBconn();
 
-            conn.cardToDB(name, imagepath, f, b, h, s);
+            conn.createCard(name, imagepath, f, b, h, s);
         }
 
         // Centers the window

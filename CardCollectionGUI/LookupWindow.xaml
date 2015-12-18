@@ -15,11 +15,15 @@
         <ListView x:Name="listView" HorizontalAlignment="Left" Height="431" Margin="0,103,0,0" VerticalAlignment="Top" Width="392">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding name}" Width="100"/>
+                    <GridViewColumn Header="Friendship" DisplayMemberBinding="{Binding friendship}" Width="70"/>
+                    <GridViewColumn Header="Bravery" DisplayMemberBinding="{Binding bravery}" Width="70"/>
+                    <GridViewColumn Header="Humor" DisplayMemberBinding="{Binding humor}" Width="70"/>
+                    <GridViewColumn Header="StarFactor" DisplayMemberBinding="{Binding starFactor}" Width="70"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label x:Name="label1" Content="Binder ID: " Margin="116,77,116,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="CardBinder" Margin="151,69,151,0" VerticalAlignment="Top" FontSize="15"/>
 
     </Grid>
 </Window>

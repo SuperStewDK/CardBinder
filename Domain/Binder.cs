@@ -21,12 +21,12 @@ namespace Domain
         public string binderId { get; set; }
         public string userId { get; set; }
         // arraylist containing cards
-        public ArrayList cardList { get; set; }
+        public List<card> cardList { get; set; }
 
         public Binder(string userid)
         {
             binderId = userid + "Binder";
-            cardList = new ArrayList();
+            cardList = new List<card>();
         }
     }
 }

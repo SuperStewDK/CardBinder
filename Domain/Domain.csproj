@@ -63,9 +63,6 @@
     <Compile Include="Trade.cs" />
     <Compile Include="CardExchange.cs" />
     <Compile Include="Binder.cs" />
-    <Compile Include="RewardCard.cs" />
-    <Compile Include="CollectableCard.cs" />
-    <Compile Include="Card.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

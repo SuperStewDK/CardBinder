@@ -21,26 +21,30 @@ namespace CardCollectionGUI
 {
     public partial class CardsWindow : Window
     {
-        private static CardsWindow instance;
-        IController control;
+        DBconn conn;
 
         public CardsWindow()
         {
-            control = DomainController.getInstance();
+            
             InitializeComponent();
             CenterWindowOnScreen();
-            addCardsToList();
             this.Show();
-            
+            addCardsToList();
         }
 
         public void addCardsToList()
         {
-         
+            conn = new DBconn();
 
-            foreach(CollectableCard c in control.getCards())
+            List<card> allCards;
+
+            allCards = conn.getCards();
+
+            foreach (card c in allCards)
             {
-                this.listView.Items.Add(new CollectableCard {Name = c.Name, Friendship = c.Friendship, Bravery = c.Bravery, Humor = c.Humor, StarFactor = c.StarFactor });
+
+                //this.listView.Items.Add(new CollectableCard { Name = c.Name, Friendship = c.Friendship, Bravery = c.Bravery, Humor = c.Humor, StarFactor = c.StarFactor });
+                this.listView.Items.Add(c);
             }
         }
 

@@ -26,7 +26,7 @@ namespace CardCollectionGUI
     
     public partial class MainWindow : Window
     {
-        IController control = DomainController.getInstance();
+ 
         
         public MainWindow()
         {
@@ -35,26 +35,7 @@ namespace CardCollectionGUI
             
         }
 
-        private void debug()
-        {
-            Console.WriteLine("\n\n\n\n");
-            foreach (CollectableCard c in control.getCards())
-            {
-                Console.WriteLine
-                    (
 
-                      "Card Name: " + c.Name
-                    + "\t Card Path: " + c.ImagePath
-                    + "\t Friendship: " + c.Friendship
-                    + "\t Bravery: " + c.Friendship
-                    + "\t StarFactor: " + c.StarFactor
-                    + "\t Humor: " + c.Humor
-                    + "\t Card ID: " + c.SerialNumber
-                    );
-            }
-            Console.WriteLine("\n\n\n\n");
-
-        }
 
         // Centers the main window
         private void CenterWindowOnScreen()
@@ -75,7 +56,7 @@ namespace CardCollectionGUI
             conn.createUser(usertextBox.Text, passwordBox.Password);
 
             MessageBox.Show("User Created");
-            debug();
+           
         }
 
         private void button_Click_Lookup(object sender, RoutedEventArgs e)

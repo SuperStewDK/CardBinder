@@ -34,7 +34,7 @@ namespace Domain
             return lastEntry.id;
         }
 
-        public void cardToDB(string name, string imagepath, int friendship, int bravery, int humor, int starfactor)
+        public void createCard(string name, string imagepath, int friendship, int bravery, int humor, int starfactor)
         {
             db = new LinqToSQLDatacontext(connectionString);
 
@@ -94,7 +94,6 @@ namespace Domain
             db.SubmitChanges();
         }
 
-        //Doesn't work properly!
         public User findUser(string userName)
         {
             db = new LinqToSQLDatacontext(connectionString);
@@ -143,10 +142,10 @@ namespace Domain
             try
             {
                 //Get cardbinder to edit
-                var binderQuery =
-                from b in db.cardbinders
-                where b.userid == userName
-                select b;
+                var binderQuery = 
+                    from b in db.cardbinders
+                    where b.userid == userName
+                    select b;
 
                 foreach (cardbinder b in binderQuery)
                 {
@@ -194,23 +193,42 @@ namespace Domain
             // Binder for transerfering data to gui
             Binder userBinder = new Binder(userName);
 
-            // users information consists of his cardbinder
-            // Linq statement
+            // users information consists of his cardbinder, Linq statement
             var query = (from t in db.cardbinders
                          where t.userid == userName
                          select t.cardid);
 
-            // Adds all cardIDs to the cardlist
-            foreach (var obj in query)
+            // Adds required cards from db to cardbinders cardlist
+            foreach (var id in query)
             {
-                userBinder.cardList.Add(obj);
-                Console.WriteLine("CardID: " + obj);
+                var cardQuery = (from c in db.cards
+                                 where c.serialnumber == id
+                                 select c);
+               
+                foreach (var e in cardQuery)
+                {
+                    userBinder.cardList.Add(e);
+                    Console.WriteLine(e.name);
+                }
             }
 
             // returns a binder with username and cardIDs
             return userBinder;
         }
 
+        public List<card> getCards()
+        {
+            db = new LinqToSQLDatacontext(connectionString);
+
+            List<card> allCards = new List<card>();
+
+            var all = db.cards;
+
+            foreach (var card in all)
+                allCards.Add(card);
+
+            return allCards;
+        }
 
         //String connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog = CardBinder;Integrated Security = True";
         //LinqToDB db;

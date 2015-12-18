@@ -15,15 +15,12 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class DomainController : IController
+    public class DomainController
     {
 
         ArrayList UserList = new ArrayList();
         ArrayList CardList = new ArrayList();
 
-
-        public RewardCard LatestRewardCard { get; set; }
-        public CollectableCard LatestCollectableCard { get; set; }
 
 
         private static DomainController instance;
@@ -43,25 +40,9 @@ namespace Domain
 
 
         //Used for creating a new card
-        public string createCard(string cardName, string imagePath, int friendship, int bravery, int humor, int starfactor)
-        {
-            CardList.Add(new CollectableCard(cardName, imagePath, friendship, bravery, humor, starfactor));
-            return "New Card has been added";
-        }
+  
 
-        public string createRewardCard()
-        {
-            RewardCard rewardCard = new RewardCard();
-            LatestRewardCard = rewardCard;
-            return rewardCard.RewardCode;
-        }
-
-        public CollectableCard cardTest(string name, string path)
-        {
-            LatestCollectableCard = new CollectableCard(name, path);
-            return LatestCollectableCard;
-
-        }
+ 
 
         public string createUser(string userName, string password)
         {
