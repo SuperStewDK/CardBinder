@@ -70,7 +70,10 @@ namespace CardCollectionGUI
 
         private void button_Click_Create(object sender, RoutedEventArgs e)
         {
-            control.createUser(usertextBox.Text, passwordBox.Password);
+            DBconn conn = new DBconn();
+
+            conn.createUser(usertextBox.Text, passwordBox.Password);
+
             MessageBox.Show("User Created");
             debug();
         }

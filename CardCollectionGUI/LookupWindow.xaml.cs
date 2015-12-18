@@ -24,7 +24,11 @@ namespace CardCollectionGUI
     public partial class LookupWindow : Window
     {
         IController control;
+
+        DBconn conn;
+
         string name;
+
         public LookupWindow(string username)
         {
             InitializeComponent();
@@ -37,7 +41,8 @@ namespace CardCollectionGUI
 
         private void findUser(string username)
         {
-            User u = control.findUser(username);
+
+            User u = conn.findUser(username);
             if (u == null)
                 displayuserlabel.Content = "No user found";
             else
@@ -56,13 +61,24 @@ namespace CardCollectionGUI
         }
 
         // Deletes user on click
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void deleteUser_Btn(object sender, RoutedEventArgs e)
         {
-            DBconn conn = new DBconn();
+            conn = new DBconn();
 
             conn.deleteUser(name);
 
             this.Close();
+        }
+
+        public void addCardsToList()
+        {
+            conn = new DBconn();
+            conn.viewUser(name);
+
+            foreach (CollectableCard c in control.getCards())
+            {
+                this.listView.Items.Add(new CollectableCard { Name = c.Name, Friendship = c.Friendship, Bravery = c.Bravery, Humor = c.Humor, StarFactor = c.StarFactor });
+            }
         }
     }
 }

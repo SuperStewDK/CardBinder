@@ -94,6 +94,18 @@ namespace Domain
             db.SubmitChanges();
         }
 
+        //Doesn't work properly!
+        public User findUser(string userName)
+        {
+            db = new LinqToSQLDatacontext(connectionString);
+
+            user u = db.users.FirstOrDefault(e => e.name == userName);
+
+            User foundUser = new User(u.name, u.password);
+
+            return foundUser;
+        }
+
         public void deleteUser(string userName)
         {
             db = new LinqToSQLDatacontext(connectionString);
@@ -111,49 +123,61 @@ namespace Domain
             db.SubmitChanges();
         }
 
+        public void createUser(string userName, string password)
+        {
+            db = new LinqToSQLDatacontext(connectionString);
+
+            user newUser = new user();
+            newUser.name = userName;
+            newUser.password = password;
+
+            // Create User
+            db.users.InsertOnSubmit(newUser);
+            db.SubmitChanges();
+        }
+
         public void editUsername(string userName, string newName)
         {
             db = new LinqToSQLDatacontext(connectionString);
 
-            //Get cardbinder to edit
-            var binderQuery =
+            try
+            {
+                //Get cardbinder to edit
+                var binderQuery =
                 from b in db.cardbinders
                 where b.userid == userName
                 select b;
 
-            foreach (cardbinder b in binderQuery)
-            {
-                // create new cardbinder to replace old
-                cardbinder binder = new cardbinder();
-                binder.id = b.id;
-                binder.cardid = b.cardid;
-                binder.userid = newName;
+                foreach (cardbinder b in binderQuery)
+                {
+                    // create new cardbinder to replace old
+                    cardbinder binder = new cardbinder();
+                    binder.id = b.id;
+                    binder.cardid = b.cardid;
+                    binder.userid = newName;
 
-                db.cardbinders.DeleteOnSubmit(b);
-                db.cardbinders.InsertOnSubmit(binder);
-            }
+                    db.cardbinders.DeleteOnSubmit(b);
+                    db.cardbinders.InsertOnSubmit(binder);
+                }
 
-            //Get user to edit
-            var query =
-                from u in db.users
-                where u.name == userName
-                select u;
+                //Get user to edit
+                var query =
+                    from u in db.users
+                    where u.name == userName
+                    select u;
 
-            foreach (user u in query)
-            {
-                // create new user and cardbinder to replace old
-                user uNew = new user();
-                uNew.name = newName;
-                uNew.password = u.password;
+                foreach (user u in query)
+                {
+                    // create new user and cardbinder to replace old
+                    user uNew = new user();
+                    uNew.name = newName;
+                    uNew.password = u.password;
 
-                db.users.DeleteOnSubmit(u);
-                db.users.InsertOnSubmit(uNew);
-            }
+                    db.users.DeleteOnSubmit(u);
+                    db.users.InsertOnSubmit(uNew);
+                }
 
-            // Save changes
-
-            try
-            {
+                // Save changes
                 db.SubmitChanges();
             }
             catch (Exception e)
