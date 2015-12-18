@@ -82,6 +82,7 @@
     <None Include="CardBinderDataSet.xss">
       <DependentUpon>CardBinderDataSet.xsd</DependentUpon>
     </None>
+    <None Include="DBfolder\CardBinder.bak" />
     <None Include="LinqToSQLDatacontext.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>LinqToSQLDatacontext.designer.cs</LastGenOutput>
@@ -100,9 +101,7 @@
       <DependentUpon>LinqToSQLDatacontext.dbml</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DBfolder\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
