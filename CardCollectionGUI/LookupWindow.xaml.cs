@@ -55,6 +55,7 @@ namespace CardCollectionGUI
             this.Top = (screenHeight / 2) - (windowHeight / 2);
         }
 
+        // Deletes user on click
         private void button_Click(object sender, RoutedEventArgs e)
         {
             DBconn conn = new DBconn();

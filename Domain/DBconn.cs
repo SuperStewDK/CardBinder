@@ -115,12 +115,52 @@ namespace Domain
         {
             db = new LinqToSQLDatacontext(connectionString);
 
+            //Get cardbinder to edit
+            var binderQuery =
+                from b in db.cardbinders
+                where b.userid == userName
+                select b;
+
+            foreach (cardbinder b in binderQuery)
+            {
+                // create new cardbinder to replace old
+                cardbinder binder = new cardbinder();
+                binder.id = b.id;
+                binder.cardid = b.cardid;
+                binder.userid = newName;
+
+                db.cardbinders.DeleteOnSubmit(b);
+                db.cardbinders.InsertOnSubmit(binder);
+            }
+
             //Get user to edit
-            user editUser = db.users.FirstOrDefault(e => e.name.Equals(userName));
-            editUser.name = newName;
+            var query =
+                from u in db.users
+                where u.name == userName
+                select u;
+
+            foreach (user u in query)
+            {
+                // create new user and cardbinder to replace old
+                user uNew = new user();
+                uNew.name = newName;
+                uNew.password = u.password;
+
+                db.users.DeleteOnSubmit(u);
+                db.users.InsertOnSubmit(uNew);
+            }
 
             // Save changes
-            db.SubmitChanges();
+
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e); ;
+            }
         }
 
         public Binder viewUser(string userName)
